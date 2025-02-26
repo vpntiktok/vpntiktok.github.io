@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpntiktok.github.io/news/article-62955.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>springboot整合log4j的踩坑实战记录_java</title>
+        <meta name="description" content="目录  1、依赖添加   1.1、添加依赖  1.2、剔除依赖  2、配置日志   2.1、日志打印记录  2.2、指定配置文件  补充：log4j调优和注意事项  总结     1、依赖添加   1" />
+        <link rel="icon" href="/assets/website/img/singboxwindows/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN Tiktok 机场订阅节点中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpntiktok.github.io/news/article-62955.htm" />
+    <meta property="og:site_name" content="VPN Tiktok 机场订阅节点中文网" />
+    <meta property="og:title" content="springboot整合log4j的踩坑实战记录_java" />
+    <meta property="og:image" content="https://vpntiktok.github.io/uploads/20240731/3b772637bed7446e379aa6498eda093c.webp" />
+        <meta property="og:release_date" content="2025-02-25T05:01:14" />
+    <meta property="og:updated_time" content="2025-02-25T05:01:14" />
+        <meta property="og:description" content="目录  1、依赖添加   1.1、添加依赖  1.2、剔除依赖  2、配置日志   2.1、日志打印记录  2.2、指定配置文件  补充：log4j调优和注意事项  总结     1、依赖添加   1" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springboot整合log4j的踩坑实战记录_java">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="/assets/website/css/singboxwindows/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WMKTGTP287"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WMKTGTP287');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg fixed-top py-3 navbar-light" id="mainNav">
+        <div class="container"> 
+            <a class="navbar-brand" href="/">
+                        <span>VPN Tiktok</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item"> <a class="nav-link" href="/">首页</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/free-nodes/">免费节点</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/paid-subscribe/">推荐机场</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/news/">新闻资讯</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/client.htm">客户端</a> </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <main role="main">
+        <div class="contact_header jumbotron text-center">
+            <h1 class="display-4">springboot整合log4j的踩坑实战记录_java</h1>
+            <p>
+                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+            </p>
+        </div>
+        <section class="bg-image-2 position-relative"> <img src="/assets/website/img/singboxwindows/mix-icons.png" alt="" class="bg-img-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">1、依赖添加</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow"> 1.1、添加依赖</a></li> <li><a href="#_lab2_0_1" rel="nofollow"> 1.2、剔除依赖</a></li> </ul> <li><a href="#_label1" rel="nofollow">2、配置日志</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_2" rel="nofollow"> 2.1、日志打印记录</a></li> <li><a href="#_lab2_1_3" rel="nofollow"> 2.2、指定配置文件</a></li> </ul> <li><a href="#_label2" rel="nofollow">补充：log4j调优和注意事项</a></li> <ul class="second_class_ul"></ul> <li><a href="#_label3" rel="nofollow">总结</a></li> <ul class="second_class_ul"></ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>1、依赖添加</h2> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3> 1.1、添加依赖</h3> <p>需要引入 log4j 的依赖支持，推荐自己确定使用的版本。</p> <div class="ay1code"> <pre class="brush:xml;">&lt;dependency&gt;          &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;          &lt;artifactId&gt;log4j-to-slf4j&lt;/artifactId&gt;          &lt;version&gt;2.11.2&lt;/version&gt;  &lt;/dependency&gt;</pre> </div> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <h3> 1.2、剔除依赖</h3> <p>springboot 默认自己内部添加了对日志的支持，需要将其全部剔除掉，不然会影响 log4j 的依赖使用。</p> <div class="ay1code"> <pre class="brush:xml;">&lt;dependency&gt;          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;          &lt;artifactId&gt;spring-boot-starter-logging&lt;/artifactId&gt;          &lt;exclusions&gt;              &lt;exclusion&gt;                 &lt;groupId&gt;*&lt;/groupId&gt;                  &lt;artifactId&gt;*&lt;/artifactId&gt;              &lt;/exclusion&gt;          &lt;/exclusions&gt;  &lt;/dependency&gt;</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>2、配置日志</h2> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3> 2.1、日志打印记录</h3> <p> 根据自己的需求进行相关的配置，这里需要注意的是使用 xml 文件进行配置，使用 properties 有坑没爬起来，文件名自定义，没有啥要求，都会在配置文件中进行指定的。</p> <div class="ay1code"> <pre class="brush:xml;">&lt;?xml version="1.0" encoding="UTF-8"?&gt;  &lt;configuration  scan="true" scanPeriod="10 seconds"&gt;      &lt;contextName&gt;beordie&lt;/contextName&gt;      &lt;property name="path" value="E:\file\javalearn\blog\src\main\resources\logs" /&gt;      &lt;conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" /&gt;      &lt;conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" /&gt;      &lt;conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" /&gt;      &lt;property name="CONSOLE_LOG_PATTERN" value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/&gt;        &lt;appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender"&gt;          &lt;filter class="ch.qos.logback.classic.filter.ThresholdFilter"&gt;              &lt;level&gt;info&lt;/level&gt;          &lt;/filter&gt;          &lt;encoder&gt;              &lt;Pattern&gt;${CONSOLE_LOG_PATTERN}&lt;/Pattern&gt;              &lt;charset&gt;UTF-8&lt;/charset&gt;          &lt;/encoder&gt;      &lt;/appender&gt;        &lt;appender name="DEBUG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;          &lt;file&gt;${path}/debug.log&lt;/file&gt;          &lt;encoder&gt;              &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n&lt;/pattern&gt;              &lt;charset&gt;UTF-8&lt;/charset&gt;          &lt;/encoder&gt;          &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;              &lt;fileNamePattern&gt;${log}/debug/log-debug-%d{yyyy-MM-dd}.%i.log&lt;/fileNamePattern&gt;              &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;                  &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;              &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;              &lt;maxHistory&gt;15&lt;/maxHistory&gt;          &lt;/rollingPolicy&gt;          &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;              &lt;level&gt;debug&lt;/level&gt;              &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;              &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;          &lt;/filter&gt;      &lt;/appender&gt;        &lt;appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;          &lt;file&gt;${log}/info.log&lt;/file&gt;          &lt;encoder&gt;              &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n&lt;/pattern&gt;              &lt;charset&gt;UTF-8&lt;/charset&gt;          &lt;/encoder&gt;          &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;              &lt;fileNamePattern&gt;${log}/info/log-info-%d{yyyy-MM-dd}.%i.log&lt;/fileNamePattern&gt;              &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;                  &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;              &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;              &lt;maxHistory&gt;15&lt;/maxHistory&gt;          &lt;/rollingPolicy&gt;          &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;              &lt;level&gt;info&lt;/level&gt;              &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;              &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;          &lt;/filter&gt;      &lt;/appender&gt;        &lt;appender name="WARN_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;          &lt;file&gt;${log}/warn.log&lt;/file&gt;          &lt;encoder&gt;              &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n&lt;/pattern&gt;              &lt;charset&gt;UTF-8&lt;/charset&gt;          &lt;/encoder&gt;          &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;              &lt;fileNamePattern&gt;${log}/warn/log-warn-%d{yyyy-MM-dd}.%i.log&lt;/fileNamePattern&gt;              &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;                  &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;              &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;              &lt;maxHistory&gt;15&lt;/maxHistory&gt;          &lt;/rollingPolicy&gt;          &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;              &lt;level&gt;warn&lt;/level&gt;              &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;              &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;          &lt;/filter&gt;      &lt;/appender&gt;        &lt;appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;          &lt;file&gt;${log}/error.log&lt;/file&gt;          &lt;encoder&gt;              &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n&lt;/pattern&gt;              &lt;charset&gt;UTF-8&lt;/charset&gt;          &lt;/encoder&gt;          &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;              &lt;fileNamePattern&gt;${log}/error/log-error-%d{yyyy-MM-dd}.%i.log&lt;/fileNamePattern&gt;              &lt;timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"&gt;                  &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;              &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;              &lt;maxHistory&gt;15&lt;/maxHistory&gt;          &lt;/rollingPolicy&gt;          &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt;              &lt;level&gt;ERROR&lt;/level&gt;              &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;              &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;          &lt;/filter&gt;      &lt;/appender&gt;        &lt;springProfile name="dev"&gt;          &lt;logger name="com.beordie" level="debug"/&gt;      &lt;/springProfile&gt;        &lt;root level="info"&gt;          &lt;appender-ref ref="CONSOLE" /&gt;          &lt;appender-ref ref="DEBUG_FILE" /&gt;          &lt;appender-ref ref="INFO_FILE" /&gt;          &lt;appender-ref ref="WARN_FILE" /&gt;          &lt;appender-ref ref="ERROR_FILE" /&gt;      &lt;/root&gt;  &lt;/configuration&gt;</pre> </div> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3> 2.2、指定配置文件</h3> <p>还需要在 spring boot 的项目配置文件中进行配置的指定。</p> <div class="ay1code"> <pre class="brush:java;">logging:    config: classpath:log4j.xml</pre> </div> <p>到这里完成对日志的整体配置，启动项目通过下面语句拿到日志对象即可进行日志的打印输出。</p> <div class="ay1code"> <pre class="brush:xhtml;">private final Logger LOGGING = LoggerFactory.getLogger(ArticleController.class);</pre> </div> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>补充：log4j调优和注意事项</h2> <p><strong>日志模式-同步/异步</strong></p> <p>log4j2提供了AsyncAppender和AsyncLogger以及全局异步，开启方式如下:</p> <ul> <li>同步模式：默认配置即为同步模式，即没有使用任何AsyncAppender和AsyncLogger。</li> <li>全局异步：配置按照同步方式配，通过添加jvm启动参数即可开启全局异步，无需修改配置和应用。</li> <li>混合异步：使用异步Logger和同步Logger的混合配置，且不开启全局异步，即Logger配置中部分AsyncLogger，部分Logger。</li> </ul> <p><strong>日志模式使用注意事项:</strong></p> <ul> <li>如果使用异步，建议使用AsyncLogger实现而不是AsyncAppender。</li> <li>如果使用同步，AsyncLogger、AsyncAppender和全局异步只能使用一种，不可以同时配置AsyncAppender和AsyncLogger，或者配置了异步的情况下启用了全局异步。</li> </ul> <p><strong>日志滚动和清除策略</strong></p> <p>log4j2提供了基于文件大小的滚动策略和基于时间的滚动策略，也可以二者并用，这里给出基于大小的滚动策略配置和基于大小/时间双滚动策略配置:</p> <ul> <li>基于大小的滚动策略:按照大小滚动，启用压缩，并最多保留N个文件</li> <li>基于大小/时间双滚动滚动策略:按照大小和时间滚动，启用压缩，单位时间内控制最多保留日志个数并控制总的日志留存时间。</li> </ul> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2>总结</h2> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-62364.htm">动物疫苗厂家查询电话 动物疫苗厂家查询电话号码</a></p>
+                                        <p>下一个：<a href="/news/article-62956.htm">动物诊疗有限公司 动物诊疗有限公司和动物诊所区别</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-61763.htm" title="鱼饲料颗粒机多少钱一台小型的（颗粒机鱼饲料配方）">鱼饲料颗粒机多少钱一台小型的（颗粒机鱼饲料配方）</a></li>
+                        <li class="py-2"><a href="/news/article-60020.htm" title="沧州卖宠物的地方（沧州哪里有宠物店）">沧州卖宠物的地方（沧州哪里有宠物店）</a></li>
+                        <li class="py-2"><a href="/news/article-62363.htm" title="养猫的人容易得15种病疾病是什么（养猫容易得哪些病）">养猫的人容易得15种病疾病是什么（养猫容易得哪些病）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-16-free-subscribe-node.htm" title="VPN Tiktok | 2月16日18.2M/S|免费VPN/Clash/SSR/Shadowrocket/V2ray免费节点订阅分享">VPN Tiktok | 2月16日18.2M/S|免费VPN/Clash/SSR/Shadowrocket/V2ray免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-node-share.htm" title="VPN Tiktok | 2月15日18.3M/S|免费VPN/V2ray/Clash/SSR/Shadowrocket免费节点订阅分享">VPN Tiktok | 2月15日18.3M/S|免费VPN/V2ray/Clash/SSR/Shadowrocket免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-61762.htm" title="动物注射疫苗简报怎么写范文大全（给动物打疫苗的简报）">动物注射疫苗简报怎么写范文大全（给动物打疫苗的简报）</a></li>
+                        <li class="py-2"><a href="/news/article-62956.htm" title="动物诊疗有限公司 动物诊疗有限公司和动物诊所区别">动物诊疗有限公司 动物诊疗有限公司和动物诊所区别</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-20-free-high-speed-nodes.htm" title="VPN Tiktok | 2月20日20.3M/S|免费VPN/V2ray/SSR/Shadowrocket/Clash免费节点订阅分享">VPN Tiktok | 2月20日20.3M/S|免费VPN/V2ray/SSR/Shadowrocket/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-23-node-share.htm" title="VPN Tiktok | 2月23日20.6M/S|免费VPN/V2ray/SSR/Shadowrocket/Clash免费节点订阅分享">VPN Tiktok | 2月23日20.6M/S|免费VPN/V2ray/SSR/Shadowrocket/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-57732.htm" title="动物医院资质是什么地方颁发的证书图片（动物医院诊疗许可证需要提供什么）">动物医院资质是什么地方颁发的证书图片（动物医院诊疗许可证需要提供什么）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">37</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="pt-4 pb-5 bg-light position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt-4">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">VPN Tiktok 机场订阅节点中文网</a> 版权所有 Powered by WordPress
+                    </div>
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.container-->
+        </footer>
+        <script src="/assets/website/js/frontend/singboxwindows/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/assets/website/js/frontend/singboxwindows/app.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </main>
+</body>
+
+</html>
