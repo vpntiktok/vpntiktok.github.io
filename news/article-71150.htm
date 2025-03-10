@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpntiktok.github.io/news/article-71150.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C语言实现扫雷游戏（代码）</title>
+        <meta name="description" content="test.c #define _CRT_SECURE_NO_WARNINGS #pragma warning(disable:6031) #include "game.h"  void menu() " />
+        <link rel="icon" href="/assets/website/img/singboxwindows/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN Tiktok 机场订阅节点中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpntiktok.github.io/news/article-71150.htm" />
+    <meta property="og:site_name" content="VPN Tiktok 机场订阅节点中文网" />
+    <meta property="og:title" content="C语言实现扫雷游戏（代码）" />
+    <meta property="og:image" content="https://vpntiktok.github.io/uploads/20240731/8385911316e65f18f95610af44d653f1.webp" />
+        <meta property="og:release_date" content="2025-03-10T04:37:36" />
+    <meta property="og:updated_time" content="2025-03-10T04:37:36" />
+        <meta property="og:description" content="test.c #define _CRT_SECURE_NO_WARNINGS #pragma warning(disable:6031) #include "game.h"  void menu() " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C语言实现扫雷游戏（代码）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="/assets/website/css/singboxwindows/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WMKTGTP287"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WMKTGTP287');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg fixed-top py-3 navbar-light" id="mainNav">
+        <div class="container"> 
+            <a class="navbar-brand" href="/">
+                        <span>VPN Tiktok</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item"> <a class="nav-link" href="/">首页</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/free-nodes/">免费节点</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/paid-subscribe/">推荐机场</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/news/">新闻资讯</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/client.htm">客户端</a> </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <main role="main">
+        <div class="contact_header jumbotron text-center">
+            <h1 class="display-4">C语言实现扫雷游戏（代码）</h1>
+            <p>
+                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+            </p>
+        </div>
+        <section class="bg-image-2 position-relative"> <img src="/assets/website/img/singboxwindows/mix-icons.png" alt="" class="bg-img-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>test.c</p> <pre><code class="language-cpp">#define _CRT_SECURE_NO_WARNINGS #pragma warning(disable:6031) #include "game.h"  void menu() { 	printf("*************************\n"); 	printf("*****   1. play      ****\n"); 	printf("*****   0. exit      ****\n"); 	printf("*************************\n"); }  void game() { 	char mine[ROWS][COLS] = { 0 };//存放布置好的雷的信息 	char show[ROWS][COLS] = { 0 };//存放排查出的雷的信息 	//初始化数组的内容为指定的内容 	//mine 数组在没有布置雷的时候，都是'0' 	InitBoard(mine, ROWS, COLS, '0'); 	//show 数组在没有排查雷的时候，都是'*' 	InitBoard(show, ROWS, COLS, '*');  	//设置雷 	SetMine(mine, ROW, COL);  	DisplayBoard(show, ROW, COL); 	DisplayBoard(mine, ROW, COL);  	//排查雷 	FindMine(mine, show, ROW, COL); }  int main() { 	int input = 0; 	//设置随机数的生成起点 	srand((unsigned int)time(NULL));  	do 	{ 		menu(); 		printf("请选择:&gt;"); 		scanf("%d", &amp;input); 		switch (input) 		{ 		case 1: 			game(); 			break; 		case 0: 			printf("退出游戏\n"); 			break; 		default: 			printf("选择错误\n"); 			break; 		} 	} while (input);  	return 0; }</code></pre> <p>&nbsp;game.h</p> <pre><code class="language-cpp">#pragma once  #include &lt;stdio.h&gt; #include &lt;time.h&gt; #include &lt;stdlib.h&gt;  #define ROW 9 #define COL 9  #define ROWS ROW+2 #define COLS COL+2  #define EASY_COUNT 10  void InitBoard(char board[ROWS][COLS], int rows, int cols, char set); void DisplayBoard(char board[ROWS][COLS], int row, int col); void SetMine(char board[ROWS][COLS], int row, int col); void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col);</code></pre> <p>game,c</p> <pre><code class="language-cpp">#define _CRT_SECURE_NO_WARNINGS #pragma warning(disable:6031) #include "game.h"  void InitBoard(char board[ROWS][COLS], int rows, int cols, char set) { 	int i = 0; 	int j = 0; 	for (i = 0; i &lt; rows; i++) 	{ 		for (j = 0; j &lt; cols; j++) 		{ 			board[i][j] = set; 		} 	} }  void DisplayBoard(char board[ROWS][COLS], int row, int col) { 	int i = 0; 	int j = 0; 	printf("-------扫雷游戏-----\n"); 	for (j = 0; j &lt;= col; j++) 	{ 		printf("%d ", j); 	} 	printf("\n");  	for (i = 1; i &lt;= row; i++) 	{ 		printf("%d ", i); 		for (j = 1; j &lt;= col; j++) 		{ 			printf("%c ", board[i][j]); 		} 		printf("\n"); 	} 	printf("-------扫雷游戏-----\n");  }  void SetMine(char board[ROWS][COLS], int row, int col) { 	int count = EASY_COUNT; 	//1~9 	//1~9 	while (count) 	{ 		int x = rand() % row + 1; 		int y = rand() % col + 1;  		if (board[x][y] == '0') 		{ 			board[x][y] = '1'; 			count--; 		} 	} }  int get_mine_count(char board[ROWS][COLS], int x, int y) { 	return (board[x - 1][y] + 		board[x - 1][y - 1] + 		board[x][y - 1] + 		board[x + 1][y - 1] + 		board[x + 1][y] + 		board[x + 1][y + 1] + 		board[x][y + 1] + 		board[x - 1][y + 1] - 8 * '0'); }  void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col) { 	int x = 0; 	int y = 0; 	int win = 0;//找到非雷的个数 	while (win &lt; row * col - EASY_COUNT) 	{ 		printf("请输入要排查的坐标:&gt;"); 		scanf("%d%d", &amp;x, &amp;y); 		if (x &gt;= 1 &amp;&amp; x &lt;= row &amp;&amp; y &gt;= 1 &amp;&amp; y &lt;= col) 		{ 			if (show[x][y] != '*') 			{ 				printf("该坐标被排查过了，不能重复排查\n"); 			} 			else 			{ 				//如果是雷 				if (mine[x][y] == '1') 				{ 					printf("很遗憾，你被炸死了\n"); 					DisplayBoard(mine, ROW, COL); 					break; 				} 				else//如果不是雷 				{ 					win++; 					//统计mine数组中x,y坐标周围有几个雷 					int count = get_mine_count(mine, x, y); 					show[x][y] = count + '0';//转换成数字字符 					DisplayBoard(show, ROW, COL); 				} 			} 		} 		else 		{ 			printf("输入的坐标非法,请重新输入\n"); 		} 	} 	if (win == row * col - EASY_COUNT) 	{ 		printf("恭喜你，排雷成功\n"); 		DisplayBoard(mine, ROW, COL); 	} }  // //基础的功能 //1. 标记功能 //2. 展开一片的功能 //</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-70513.htm">成都宠物领养公众号是什么（成都宠物领养平台交流微信群）</a></p>
+                                        <p>下一个：<a href="/news/article-71154.htm">领养协议书模板图片（领养协议里最重要的是写什么）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-28-free-node-subscribe-links.htm" title="VPN Tiktok | 2月28日18.6M/S|免费VPN/V2ray/Clash/SSR/Shadowrocket免费节点订阅分享">VPN Tiktok | 2月28日18.6M/S|免费VPN/V2ray/Clash/SSR/Shadowrocket免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-60596.htm" title="炒薏米冬瓜皮茶的做法大全(炒薏米冬瓜皮茶的做法窍门)">炒薏米冬瓜皮茶的做法大全(炒薏米冬瓜皮茶的做法窍门)</a></li>
+                        <li class="py-2"><a href="/news/article-67283.htm" title="上海地区领养狗狗多少钱（上海地区领养狗狗多少钱一个月）">上海地区领养狗狗多少钱（上海地区领养狗狗多少钱一个月）</a></li>
+                        <li class="py-2"><a href="/news/article-65404.htm" title="Nodejs对数据库的增删改查">Nodejs对数据库的增删改查</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-26-node-share.htm" title="VPN Tiktok | 2月26日22.3M/S|免费VPN/Clash/Shadowrocket/V2ray/SSR免费节点订阅分享">VPN Tiktok | 2月26日22.3M/S|免费VPN/Clash/Shadowrocket/V2ray/SSR免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-60595.htm" title="免费领养宠物的应用软件（免费领养宠物的平台有哪些）">免费领养宠物的应用软件（免费领养宠物的平台有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-59454.htm" title="做宠物零食 做宠物零食需要什么手续">做宠物零食 做宠物零食需要什么手续</a></li>
+                        <li class="py-2"><a href="/news/article-57248.htm" title="flex卡片布局（随屏幕自适应）">flex卡片布局（随屏幕自适应）</a></li>
+                        <li class="py-2"><a href="/news/article-58299.htm" title="VS2017的C++开发心得（一）VS的项目创建">VS2017的C++开发心得（一）VS的项目创建</a></li>
+                        <li class="py-2"><a href="/news/article-58911.htm" title="58同城宠物猫领养信息怎么填（58同城宠物猫领养信息怎么填写）">58同城宠物猫领养信息怎么填（58同城宠物猫领养信息怎么填写）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">43</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="pt-4 pb-5 bg-light position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt-4">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">VPN Tiktok 机场订阅节点中文网</a> 版权所有 Powered by WordPress
+                    </div>
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.container-->
+        </footer>
+        <script src="/assets/website/js/frontend/singboxwindows/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/assets/website/js/frontend/singboxwindows/app.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </main>
+</body>
+
+</html>
