@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpntiktok.github.io/news/article-77878.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>springboot集成elasticsearch7.2</title>
+        <meta name="description" content="上篇文章我们讲解了elasticsearch的安装，这次我们来搞一下，如何在自己的项目中集成elasticsearch。 正常来讲spring-data中都会提供相应的starter，让我们方便的使用" />
+        <link rel="icon" href="/assets/website/img/singboxwindows/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN Tiktok 机场订阅节点中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpntiktok.github.io/news/article-77878.htm" />
+    <meta property="og:site_name" content="VPN Tiktok 机场订阅节点中文网" />
+    <meta property="og:title" content="springboot集成elasticsearch7.2" />
+    <meta property="og:image" content="https://vpntiktok.github.io/uploads/20240731/3e56284df6bb477a59a2f9fc6c8fcbbf.webp" />
+        <meta property="og:release_date" content="2025-03-20T10:02:40" />
+    <meta property="og:updated_time" content="2025-03-20T10:02:40" />
+        <meta property="og:description" content="上篇文章我们讲解了elasticsearch的安装，这次我们来搞一下，如何在自己的项目中集成elasticsearch。 正常来讲spring-data中都会提供相应的starter，让我们方便的使用" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springboot集成elasticsearch7.2">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="/assets/website/css/singboxwindows/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WMKTGTP287"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WMKTGTP287');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg fixed-top py-3 navbar-light" id="mainNav">
+        <div class="container"> 
+            <a class="navbar-brand" href="/">
+                        <span>VPN Tiktok</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item"> <a class="nav-link" href="/">首页</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/free-nodes/">免费节点</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/paid-subscribe/">推荐机场</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/news/">新闻资讯</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/client.htm">客户端</a> </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <main role="main">
+        <div class="contact_header jumbotron text-center">
+            <h1 class="display-4">springboot集成elasticsearch7.2</h1>
+            <p>
+                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+            </p>
+        </div>
+        <section class="bg-image-2 position-relative"> <img src="/assets/website/img/singboxwindows/mix-icons.png" alt="" class="bg-img-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>上篇文章我们讲解了elasticsearch的安装，这次我们来搞一下，如何在自己的项目中集成elasticsearch。 正常来讲spring-data中都会提供相应的starter，让我们方便的使用各种Template操作对应的组件，比如常用RedisTemplate, JdbcTemplate等，其实spring-data中也提供的相应的elasticsearch的对应工具。但是我这里并没有使用，而是直接使用的elasticsearch原生api实现的。为什么这么做呢，因为spring-data-elasticsearch 最新的版本3.2，最高支持的elasticsearch版本为6.8， 而我们用的是7.2的版本，并且官方建议我们使用的jar版本最好和软件版本一致。</p> <p><img fetchpriority="high" decoding="async" alt="" height="732" src="http://img.555519.xyz/uploads3/20220602/c6f3a84657cbed68fc7016bceb42568e.jpg"></p> <p><img decoding="async" alt="" height="798" src="http://img.555519.xyz/uploads3/20220602/a11ecaf436657c56d37685b60a8a19fb.jpg"></p> <p>还有一个问题， 是关于客户端的， spring-data-elasticsearch中默认使用的是TransportClient, 这个客户端在7这个版本中已经不再建议使用了，并且将会在8的版本中彻底移除。而我们用的是7这个版本，目前推荐使用的elasticsearch的高级客户端，HighLevelRestClient. spring-data-es中声明会一直支持TransportClient，只要你的这个es版本支持。当然，spring-data-es中也是支持高级别客户端的，但是还有由于支持版本过低的问题，所以我最后还是决定采用原生客户端。如果大家用的es版本比较低，还是可以使用spring-data-es的。</p> <p><img decoding="async" alt="" height="582" src="http://img.555519.xyz/uploads3/20220602/72853e63d536db1e7629a3fbd3f5ca71.jpg"></p> <p><img loading="lazy" decoding="async" alt="" height="986" src="http://img.555519.xyz/uploads3/20220602/af7450136695a7dfc190773cab92b954.jpg"></p> <p>接下来我们来集成项目，集成之前，大家需要了解一下es中的一些专有名词，比如什么是索引，类型，文档，同时你要了解es是干什么用的。es最主要的功能就是查询，也就是他查东西的速度非常快，并且支持分词，全文检索。如果我们在mysql中查询一遍文章的内容，其实是非常痛苦的，我们可能必须得使用 like 或者拼接or去查询多个字段，并且有些场景是无法实现的，比如你的文章中的内容中包含 ”一朵鲜花“， 而你去搜索 ”一朵花“ 这种情况你是查不到的，但是es可以，因为es可以分词， 他会一朵鲜花， 分成&nbsp; ”一朵“&nbsp; ”鲜花“ 两个词，再把 ”一朵花“ 分成&nbsp; ”一朵“ 和 ”花“&nbsp; （注： 这里是个人方便理解，可能具体分词不是这么分的，大家领悟精髓）。 就很容易做到查询。 同时es查询的比较快，也是因为他的内部采用了倒叙索引，关于倒叙索引的原理，大家可以去找找资料，这里就不展开说了。</p> <p>一。 引入jar包</p> <pre><code>        &lt;dependency&gt;             &lt;groupId&gt;org.elasticsearch.client&lt;/groupId&gt;             &lt;artifactId&gt;elasticsearch-rest-high-level-client&lt;/artifactId&gt;             &lt;version&gt;7.2.0&lt;/version&gt;         &lt;/dependency&gt;          &lt;dependency&gt;             &lt;groupId&gt;org.elasticsearch.client&lt;/groupId&gt;             &lt;artifactId&gt;elasticsearch-rest-client&lt;/artifactId&gt;             &lt;version&gt;7.2.0&lt;/version&gt;         &lt;/dependency&gt;         &lt;dependency&gt;             &lt;groupId&gt;org.elasticsearch&lt;/groupId&gt;             &lt;artifactId&gt;elasticsearch&lt;/artifactId&gt;             &lt;version&gt;7.2.0&lt;/version&gt;         &lt;/dependency&gt;</code></pre> <p>二。封装工具类，这里主要使用高级别客户端封装， 主要封装了创建索引，判断索引是否存在，删除索引， 插入文档的功能，还有一些高级功能还没有 研究完，比如高亮和分页，我会一边研究一边更新，先给出一些简单的操作demo.后续文章我们在深入展开。</p> <pre><code class="language-java">@Component @Slf4j public class EsUtil {      @Resource     private RestHighLevelClient restHighLevelClient;       /**      * 创建索引(默认分片数为5和副本数为1)      * @param indexName      * @throws IOException      */     public boolean createIndex(String indexName) throws IOException {         CreateIndexRequest request = new CreateIndexRequest(indexName);         request.settings(Settings.builder()                 // 设置分片数为3， 副本为2                 .put("index.number_of_shards", 3)                 .put("index.number_of_replicas", 2)         );         request.mapping(generateBuilder());         CreateIndexResponse response = restHighLevelClient.indices().create(request, RequestOptions.DEFAULT);         // 指示是否所有节点都已确认请求         boolean acknowledged = response.isAcknowledged();         // 指示是否在超时之前为索引中的每个分片启动了必需的分片副本数         boolean shardsAcknowledged = response.isShardsAcknowledged();         if (acknowledged || shardsAcknowledged) {             log.info("创建索引成功！索引名称为{}", indexName);             return true;         }         return false;     }        /**      * 判断索引是否存在      * @param indexName      * @return      */     public boolean isIndexExists(String indexName){         boolean exists = false;         try {             GetIndexRequest getIndexRequest = new GetIndexRequest(indexName);             getIndexRequest.humanReadable(true);             exists = restHighLevelClient.indices().exists(getIndexRequest,RequestOptions.DEFAULT);         } catch (IOException e) {             e.printStackTrace();         }         return exists;     }      /**      * 删除索引      * @param indexName      * @return      */     public boolean delIndex(String indexName){         boolean acknowledged = false;         try {             DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest(indexName);             deleteIndexRequest.indicesOptions(IndicesOptions.LENIENT_EXPAND_OPEN);             AcknowledgedResponse delete = restHighLevelClient.indices().delete(deleteIndexRequest, RequestOptions.DEFAULT);             acknowledged = delete.isAcknowledged();         } catch (IOException e) {             e.printStackTrace();         }         return acknowledged;     }      /**      * 更新索引(默认分片数为5和副本数为1)：      * 只能给索引上添加一些不存在的字段      * 已经存在的映射不能改      *      * @param clazz 根据实体自动映射es索引      * @throws IOException      */     public boolean updateIndex(Class clazz) throws Exception {         Document declaredAnnotation = (Document )clazz.getDeclaredAnnotation(Document.class);         if(declaredAnnotation == null){             throw new Exception(String.format("class name: %s can not find Annotation [Document], please check", clazz.getName()));         }         String indexName = declaredAnnotation.index();         PutMappingRequest request = new PutMappingRequest(indexName);          request.source(generateBuilder(clazz));         AcknowledgedResponse response = restHighLevelClient.indices().putMapping(request, RequestOptions.DEFAULT);         // 指示是否所有节点都已确认请求         boolean acknowledged = response.isAcknowledged();          if (acknowledged ) {             log.info("更新索引索引成功！索引名称为{}", indexName);             return true;         }         return false;     }      /**      * 添加单条数据      * 提供多种方式：      *  1. json      *  2. map      *      Map&lt;String, Object&gt; jsonMap = new HashMap&lt;&gt;();      *      jsonMap.put("user", "kimchy");      *      jsonMap.put("postDate", new Date());      *      jsonMap.put("message", "trying out Elasticsearch");      *      IndexRequest indexRequest = new IndexRequest("posts")      *          .id("1").source(jsonMap);      *  3. builder      *      XContentBuilder builder = XContentFactory.jsonBuilder();      *      builder.startObject();      *      {      *          builder.field("user", "kimchy");      *          builder.timeField("postDate", new Date());      *          builder.field("message", "trying out Elasticsearch");      *      }      *      builder.endObject();      *      IndexRequest indexRequest = new IndexRequest("posts")      *      .id("1").source(builder);      * 4. source:      *      IndexRequest indexRequest = new IndexRequest("posts")      *     .id("1")      *     .source("user", "kimchy",      *         "postDate", new Date(),      *         "message", "trying out Elasticsearch");      *      *   报错：  Validation Failed: 1: type is missing;      *      加入两个jar包解决      *      * @return      */     public IndexResponse add(String indexName, Object o) throws IOException {         IndexRequest request = new IndexRequest(indexName);         String userJson = JSON.toJSONString(o);         request.source(userJson, XContentType.JSON);         IndexResponse indexResponse = restHighLevelClient.index(request, RequestOptions.DEFAULT);         return indexResponse;     }      private XContentBuilder generateBuilder() throws IOException {         XContentBuilder builder = XContentFactory.jsonBuilder();         builder.startObject();         {             builder.startObject("properties");             {                 // es7及以后去掉了映射类型--person                 builder.startObject("name");                     {                         builder.field("type", "text");                         builder.field("analyzer", "ik_smart");                     }                     builder.endObject();             }             {                 builder.startObject("age");                 {                     builder.field("type", "integer");                 }                 builder.endObject();             }             {                 builder.startObject("desc");                 {                     builder.field("type", "text");                     builder.field("analyzer", "ik_smart");                 }                 builder.endObject();             }             {                 builder.startObject("id");                 {                     builder.field("type", "integer");                 }                 builder.endObject();             }             builder.endObject();         }         builder.endObject();         /*.startObject().field("properties")             .startObject().field("person")                 .startObject("name")                     .field("type" , "text")                     .field("analyzer", "ik_smart")                 .endObject()                 .startObject("age")                     .field("type" , "int")                 .endObject()                 .startObject("desc")                     .field("type", "text")                     .field("analyzer", "ik_smart")                 .endObject()             .endObject()         .endObject();*/         return builder;     }    }</code></pre> <p>上面工具类中给出的索引结构是一个用户，只有id, name , age, desc 四个简单字段的结构</p> <p>同时desc字段和姓名字段都是使用的ik-smart做的分词。</p> <p>接下来大家就可以使用controller或者junittest来进行调用, 配合head插件观察数据。 整体的大致流程就是， index定义索引结构，然后我们把按格式数据存到es中， 使用es提供的高效api来做查询。 这篇文章先到这里，其实这里有一个痛点就是如果我们的数据结构比较复杂， 那么我们在创建索引的时候可能需要写出大量的代码，四个字段就这么多</p> <p><img loading="lazy" decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220602/5e5f90ff3993274657729e4a391eda09.jpg"></p> <p>所以这里其实我们可以根据实体的结构自动设计索引结构，像spring-data-es中就是根据我们在实体类上的注解，自动创建索引的。我这里也实现了自定义注解来创建es索引结构的方法，下一篇文章给大家介绍一下。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-77194.htm">宠物领养网站设计参考文献有哪些呢（宠物领养网站设计参考文献有哪些呢）</a></p>
+                                        <p>下一个：<a href="/news/article-77880.htm">中国十大宠物粮生产企业排名（中国宠物粮品牌）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-60595.htm" title="免费领养宠物的应用软件（免费领养宠物的平台有哪些）">免费领养宠物的应用软件（免费领养宠物的平台有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-71818.htm" title="宠物店寄养会有什么风险（宠物店寄养一般怎么收费）">宠物店寄养会有什么风险（宠物店寄养一般怎么收费）</a></li>
+                        <li class="py-2"><a href="/news/article-64784.htm" title="动物疫苗多少钱一支啊图片及价格查询表（动物疫苗法最新消息2019）">动物疫苗多少钱一支啊图片及价格查询表（动物疫苗法最新消息2019）</a></li>
+                        <li class="py-2"><a href="/news/article-68535.htm" title="农大动物医院医生排班（农大动物医院 挂号）">农大动物医院医生排班（农大动物医院 挂号）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-node-share.htm" title="VPN Tiktok | 3月8日22.5M/S|免费VPN/V2ray/Clash/Shadowrocket/SSR免费节点订阅分享">VPN Tiktok | 3月8日22.5M/S|免费VPN/V2ray/Clash/Shadowrocket/SSR免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-75163.htm" title="转载：Hadoop相关知识整理系列之一：HBase基本架构及原理">转载：Hadoop相关知识整理系列之一：HBase基本架构及原理</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-node-share.htm" title="VPN Tiktok | 3月9日22.2M/S|免费VPN/Clash/V2ray/Shadowrocket/SSR免费节点订阅分享">VPN Tiktok | 3月9日22.2M/S|免费VPN/Clash/V2ray/Shadowrocket/SSR免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-72470.htm" title="猫如何做驱虫（猫怎么做驱虫 知乎）">猫如何做驱虫（猫怎么做驱虫 知乎）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-free-v2ray.htm" title="VPN Tiktok | 3月2日20.4M/S|免费VPN/SSR/V2ray/Shadowrocket/Clash免费节点订阅分享">VPN Tiktok | 3月2日20.4M/S|免费VPN/SSR/V2ray/Shadowrocket/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-node-share-links.htm" title="VPN Tiktok | 2月17日22.8M/S|免费VPN/Shadowrocket/Clash/SSR/V2ray免费节点订阅分享">VPN Tiktok | 2月17日22.8M/S|免费VPN/Shadowrocket/Clash/SSR/V2ray免费节点订阅分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">43</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="pt-4 pb-5 bg-light position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt-4">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">VPN Tiktok 机场订阅节点中文网</a> 版权所有 Powered by WordPress
+                    </div>
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.container-->
+        </footer>
+        <script src="/assets/website/js/frontend/singboxwindows/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/assets/website/js/frontend/singboxwindows/app.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </main>
+</body>
+
+</html>
