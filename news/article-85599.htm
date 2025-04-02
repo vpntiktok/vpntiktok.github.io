@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpntiktok.github.io/news/article-85599.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>【opencv-c++】cv::createTrackbar创建滚动条</title>
+        <meta name="description" content="【opencv-c++】cv::createTrackbar创建滚动条  1、背景 2、示例    Trackbar：轨迹条、跟踪条、滑动条。在本博客中取滑动条的翻译。 opencv提供了create" />
+        <link rel="icon" href="/assets/website/img/singboxwindows/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN Tiktok 机场订阅节点中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpntiktok.github.io/news/article-85599.htm" />
+    <meta property="og:site_name" content="VPN Tiktok 机场订阅节点中文网" />
+    <meta property="og:title" content="【opencv-c++】cv::createTrackbar创建滚动条" />
+    <meta property="og:image" content="https://vpntiktok.github.io/uploads/20240731/ba4f645a8606c55a3dbff9a7b094b9d1.webp" />
+        <meta property="og:release_date" content="2025-03-31T08:43:04" />
+    <meta property="og:updated_time" content="2025-03-31T08:43:04" />
+        <meta property="og:description" content="【opencv-c++】cv::createTrackbar创建滚动条  1、背景 2、示例    Trackbar：轨迹条、跟踪条、滑动条。在本博客中取滑动条的翻译。 opencv提供了create" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="【opencv-c++】cv::createTrackbar创建滚动条">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="/assets/website/css/singboxwindows/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WMKTGTP287"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WMKTGTP287');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg fixed-top py-3 navbar-light" id="mainNav">
+        <div class="container"> 
+            <a class="navbar-brand" href="/">
+                        <span>VPN Tiktok</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item"> <a class="nav-link" href="/">首页</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/free-nodes/">免费节点</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/paid-subscribe/">推荐机场</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/news/">新闻资讯</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/client.htm">客户端</a> </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <main role="main">
+        <div class="contact_header jumbotron text-center">
+            <h1 class="display-4">【opencv-c++】cv::createTrackbar创建滚动条</h1>
+            <p>
+                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+            </p>
+        </div>
+        <section class="bg-image-2 position-relative"> <img src="/assets/website/img/singboxwindows/mix-icons.png" alt="" class="bg-img-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <div class="toc"> <h3>【opencv-c++】cv::createTrackbar创建滚动条</h3> <ul> <li><a href="#1_1" rel="nofollow">1、背景</a></li> <li><a href="#2_44" rel="nofollow">2、示例</a></li> </ul> </div> </h1> <p>Trackbar：轨迹条、跟踪条、滑动条。在本博客中取滑动条的翻译。</p> <p>opencv提供了createTrackbar函数来创建滚动条，该进度条可以在UI界面上进行滑动，<br /> 当滑动的时候，会有不同的值。<br /> 通过该功能 ，可以让用户在UI界面实现一些交互功能，比如图像的亮度、饱和度等参数调整，视频的进度调整等。</p> <p>cv::createTrackbar函数原型如下：</p> <pre><code class="prism language-bash">int createTrackbar<span class="token punctuation">(</span>const string<span class="token operator">&amp;</span> trackbarname,  					const string<span class="token operator">&amp;</span>winname,  					int* value,   					int count ， 					TrackbarCallback onChange <span class="token operator">=</span> <span class="token number">0</span>,  					void* userdata <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>&lt;</code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-84874.htm">宠物粮食品牌都有什么牌子好 宠物粮食品牌都有什么牌子好的</a></p>
+                                        <p>下一个：<a href="/news/article-85600.htm">动物疫苗生产资质要求（动物疫苗生产资质要求是什么）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-70513.htm" title="成都宠物领养公众号是什么（成都宠物领养平台交流微信群）">成都宠物领养公众号是什么（成都宠物领养平台交流微信群）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-free-node-subscribe.htm" title="VPN Tiktok | 3月30日18.6M/S|免费VPN/Shadowrocket/V2ray/Clash/SSR免费节点订阅分享">VPN Tiktok | 3月30日18.6M/S|免费VPN/Shadowrocket/V2ray/Clash/SSR免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-82020.htm" title="宠乐康动物医院电话（宠乐康宠物医院怎么样）">宠乐康动物医院电话（宠乐康宠物医院怎么样）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-free-subscribe-node.htm" title="VPN Tiktok | 3月13日20M/S|免费VPN/SSR/Clash/Shadowrocket/V2ray免费节点订阅分享">VPN Tiktok | 3月13日20M/S|免费VPN/SSR/Clash/Shadowrocket/V2ray免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-free-v2ray-subscribe.htm" title="VPN Tiktok | 3月31日22.4M/S|免费VPN/V2ray/SSR/Clash/Shadowrocket免费节点订阅分享">VPN Tiktok | 3月31日22.4M/S|免费VPN/V2ray/SSR/Clash/Shadowrocket免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-66648.htm" title="java socket 同时读写_java 中的 BIO/NIO/AIO 详解">java socket 同时读写_java 中的 BIO/NIO/AIO 详解</a></li>
+                        <li class="py-2"><a href="/news/article-71816.htm" title="Go 互斥锁（sync.Mutex）和 读写锁（sync.RWMutex）">Go 互斥锁（sync.Mutex）和 读写锁（sync.RWMutex）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-node-share-links.htm" title="VPN Tiktok | 3月10日20.1M/S|免费VPN/Shadowrocket/V2ray/Clash/SSR免费节点订阅分享">VPN Tiktok | 3月10日20.1M/S|免费VPN/Shadowrocket/V2ray/Clash/SSR免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-86311.htm" title="vue &#8211; 如何实现导入excel功能">vue &#8211; 如何实现导入excel功能</a></li>
+                        <li class="py-2"><a href="/news/article-74481.htm" title="猫三联三针一共多少钱一针啊（猫三联三针有什么区别）">猫三联三针一共多少钱一针啊（猫三联三针有什么区别）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="pt-4 pb-5 bg-light position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt-4">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">VPN Tiktok 机场订阅节点中文网</a> 版权所有 Powered by WordPress
+                    </div>
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.container-->
+        </footer>
+        <script src="/assets/website/js/frontend/singboxwindows/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/assets/website/js/frontend/singboxwindows/app.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </main>
+</body>
+
+</html>
