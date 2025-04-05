@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpntiktok.github.io/news/article-89225.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文件上传fileupload实现</title>
+        <meta name="description" content="&lt;!--上传--&gt;  &lt;!-- https://mvnrepository.com/artifact/commons-io/commons-io --&gt; &lt;depende" />
+        <link rel="icon" href="/assets/website/img/singboxwindows/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN Tiktok 机场订阅节点中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpntiktok.github.io/news/article-89225.htm" />
+    <meta property="og:site_name" content="VPN Tiktok 机场订阅节点中文网" />
+    <meta property="og:title" content="文件上传fileupload实现" />
+    <meta property="og:image" content="https://vpntiktok.github.io/uploads/20240731/3e56284df6bb477a59a2f9fc6c8fcbbf.webp" />
+        <meta property="og:release_date" content="2025-04-05T08:21:07" />
+    <meta property="og:updated_time" content="2025-04-05T08:21:07" />
+        <meta property="og:description" content="&lt;!--上传--&gt;  &lt;!-- https://mvnrepository.com/artifact/commons-io/commons-io --&gt; &lt;depende" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="文件上传fileupload实现">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="/assets/website/css/singboxwindows/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WMKTGTP287"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WMKTGTP287');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg fixed-top py-3 navbar-light" id="mainNav">
+        <div class="container"> 
+            <a class="navbar-brand" href="/">
+                        <span>VPN Tiktok</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item"> <a class="nav-link" href="/">首页</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/free-nodes/">免费节点</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/paid-subscribe/">推荐机场</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/news/">新闻资讯</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/client.htm">客户端</a> </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <main role="main">
+        <div class="contact_header jumbotron text-center">
+            <h1 class="display-4">文件上传fileupload实现</h1>
+            <p>
+                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+            </p>
+        </div>
+        <section class="bg-image-2 position-relative"> <img src="/assets/website/img/singboxwindows/mix-icons.png" alt="" class="bg-img-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <div> <pre style="background-color:#2b2b2b; color:#a9b7c6; font-family:'宋体'; font-size:12.6pt"><span style="color:#808080">&lt;!--上传--&gt; </span><span style="color:#808080"> </span><span style="color:#808080">&lt;!-- https://mvnrepository.com/artifact/commons-io/commons-io --&gt; </span><span style="color:#e8bf6a">&lt;dependency&gt; </span><span style="color:#e8bf6a">    &lt;groupId&gt;</span>commons-io<span style="color:#e8bf6a">&lt;/groupId&gt; </span><span style="color:#e8bf6a">    &lt;artifactId&gt;</span>commons-io<span style="color:#e8bf6a">&lt;/artifactId&gt; </span><span style="color:#e8bf6a">    &lt;version&gt;</span>2.4<span style="color:#e8bf6a">&lt;/version&gt; </span><span style="color:#e8bf6a">&lt;/dependency&gt; </span><span style="color:#808080">&lt;!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload --&gt; </span><span style="color:#e8bf6a">&lt;dependency&gt; </span><span style="color:#e8bf6a">    &lt;groupId&gt;</span>commons-fileupload<span style="color:#e8bf6a">&lt;/groupId&gt; </span><span style="color:#e8bf6a">    &lt;artifactId&gt;</span>commons-fileupload<span style="color:#e8bf6a">&lt;/artifactId&gt; </span><span style="color:#e8bf6a">    &lt;version&gt;</span>1.3.1<span style="color:#e8bf6a">&lt;/version&gt; </span><span style="color:#e8bf6a">&lt;/dependency&gt; </span></pre> <p> </div> </h1> </h1> <div> <pre style="background-color:#2b2b2b; color:#a9b7c6; font-family:'宋体'; font-size:12.6pt"><span style="color:#e8bf6a">&lt;bean </span><span style="color:#bababa">id</span><span style="color:#6a8759">="multipartResolver" </span><span style="color:#6a8759">      </span><span style="color:#bababa">class</span><span style="color:#6a8759">="org.springframework.web.multipart.commons.CommonsMultipartResolver"</span><span style="color:#e8bf6a">&gt; </span><span style="color:#e8bf6a">    &lt;property </span><span style="color:#bababa">name</span><span style="color:#6a8759">="defaultEncoding" </span><span style="color:#bababa">value</span><span style="color:#6a8759">="UTF-8" </span><span style="color:#e8bf6a">/&gt; </span><span style="color:#e8bf6a">    </span><span style="color:#808080">&lt;!-- 指定所上传文件的总大小,单位字节。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 --&gt; </span><span style="color:#808080">    </span><span style="color:#e8bf6a">&lt;property </span><span style="color:#bababa">name</span><span style="color:#6a8759">="maxUploadSize" </span><span style="color:#bababa">value</span><span style="color:#6a8759">="10240000" </span><span style="color:#e8bf6a">/&gt; </span><span style="color:#e8bf6a">&lt;/bean&gt;</span></pre> <p> </div> </h1> </h1> <div> <pre style="background-color:#2b2b2b; color:#a9b7c6; font-family:'宋体'; font-size:12.6pt"><span style="color:#e8bf6a"></span></pre> <pre style="background-color:#2b2b2b; color:#a9b7c6; font-family:'宋体'; font-size:12.6pt"><span style="color:#e8bf6a">&lt;form </span><span style="color:#bababa">action=</span><span style="color:#a5c261">"StockController/addStock.action"  </span><span style="color:#bababa">method=</span><span style="color:#a5c261">"post" </span><span style="color:#bababa">enctype=</span><span style="color:#a5c261">"multipart/form-data"</span><span style="color:#e8bf6a">&gt; </span></pre> <pre style="background-color:#2b2b2b; color:#a9b7c6; font-family:'宋体'; font-size:12.6pt"><span style="color:#e8bf6a"><span style="white-space:pre">	</span>&lt;input </span><span style="color:#bababa">type=</span><span style="color:#a5c261">"file" </span><span style="color:#bababa">name=</span><span style="color:#a5c261">"multipartFile"</span><span style="color:#e8bf6a">/&gt;&lt;br/&gt;</span></pre> <pre style="background-color:#2b2b2b; color:#a9b7c6; font-family:'宋体'; font-size:12.6pt"><span style="color:#e8bf6a"><span style="white-space:pre">	</span>&lt;input </span><span style="color:#bababa">type=</span><span style="color:#a5c261">"submit" </span><span style="color:#bababa">value=</span><span style="color:#a5c261">"添加"</span><span style="color:#e8bf6a">&gt;</span></pre> <pre style="background-color:#2b2b2b; color:#a9b7c6; font-family:'宋体'; font-size:12.6pt"><span style="color:#e8bf6a">&lt;/form&gt;</span></pre> <p> 、 </p></div> <div>   </div> <div>   </div> </h1> <div>   </div> <div> <pre style="background-color:#2b2b2b; color:#a9b7c6; font-family:'宋体'; font-size:12.6pt"><span style="color:#bbb529">@RequestMapping</span>(<span style="color:#d0d0ff">value </span>= <span style="color:#6a8759">"addStock" </span><span style="color:#cc7832">,</span><span style="color:#d0d0ff">method </span>= RequestMethod.<span style="color:#9876aa"><em>POST</em></span>)     <span style="color:#cc7832">public </span>String <span style="color:#ffc66d">addStock</span>(Stock stock<span style="color:#cc7832">, </span>MultipartFile multipartFile<span style="color:#cc7832">, </span>HttpServletRequest request) <span style="color:#cc7832">throws </span>IOException {                        System.<span style="color:#9876aa"><em>out</em></span>.println(multipartFile + <span style="color:#6a8759">"-------------------------------"</span>)<span style="color:#cc7832">; </span><span style="color:#808080">//获取文件名字 </span><span style="color:#808080">        </span>String originalFilename = multipartFile.getOriginalFilename()<span style="color:#cc7832">; </span><span style="color:#cc7832">        </span>System.<span style="color:#9876aa"><em>out</em></span>.println(originalFilename + <span style="color:#6a8759">"++++++++++++++++++++"</span>)<span style="color:#cc7832">; </span><span style="color:#808080">//获取不会重复的毫秒数 </span><span style="color:#808080">        </span><span style="color:#cc7832">long </span>l = System.<span style="font-style:italic">currentTimeMillis</span>()<span style="color:#cc7832">; </span><span style="color:#808080">//新名字 </span><span style="color:#808080">        </span>String newName = l + originalFilename<span style="color:#cc7832">; </span><span style="color:#cc7832">        </span>System.<span style="color:#9876aa"><em>out</em></span>.println(newName + <span style="color:#6a8759">"----------++++++"</span>)<span style="color:#cc7832">; </span><span style="color:#808080">//图片的输入流名字 </span><span style="color:#808080">        </span>InputStream inputStream = multipartFile.getInputStream()<span style="color:#cc7832">; </span><span style="color:#808080">//存在于项目中的路径 </span><span style="color:#808080">        </span>String wlPath = <span style="color:#6a8759">"E:</span><span style="color:#cc7832">\\</span><span style="color:#6a8759">小实训1</span><span style="color:#cc7832">\\</span><span style="color:#6a8759">xupeng20170919</span><span style="color:#cc7832">\\</span><span style="color:#6a8759">web</span><span style="color:#cc7832">\\</span><span style="color:#6a8759">image/" </span>+ newName<span style="color:#cc7832">; </span><span style="color:#808080">//逻辑路径，存到数据库中 </span><span style="color:#808080">        </span>String ljPath = <span style="color:#6a8759">"../image/" </span>+ newName<span style="color:#cc7832">; </span><span style="color:#808080">//临时路径 </span><span style="color:#808080">        </span>String realPath = request.getSession().getServletContext().getRealPath(<span style="color:#6a8759">"/"</span>)<span style="color:#cc7832">; </span><span style="color:#cc7832">        </span>String lsPath = realPath + <span style="color:#6a8759">"//image//" </span>+ newName<span style="color:#cc7832">; </span><span style="color:#cc7832"> </span><span style="color:#808080">//如果没有那个文件夹就创建 </span><span style="color:#808080">        </span>File wlFile = <span style="color:#cc7832">new </span>File(<span style="color:#6a8759">"E:</span><span style="color:#cc7832">\\</span><span style="color:#6a8759">小实训1</span><span style="color:#cc7832">\\</span><span style="color:#6a8759">xupeng20170919</span><span style="color:#cc7832">\\</span><span style="color:#6a8759">web</span><span style="color:#cc7832">\\</span><span style="color:#6a8759">image"</span>)<span style="color:#cc7832">; </span><span style="color:#cc7832">        if </span>(!wlFile.exists()) {             wlFile.mkdir()<span style="color:#cc7832">; </span><span style="color:#cc7832">        </span>}         File isFile = <span style="color:#cc7832">new </span>File(realPath + <span style="color:#6a8759">"</span><span style="color:#cc7832">\\</span><span style="color:#6a8759">image</span><span style="color:#cc7832">\\</span><span style="color:#6a8759">"</span>)<span style="color:#cc7832">; </span><span style="color:#cc7832">        if </span>(!isFile.exists()) {             isFile.mkdir()<span style="color:#cc7832">; </span><span style="color:#cc7832">        </span>} <span style="color:#808080">//不为空时 </span><span style="color:#808080">        </span><span style="color:#cc7832">if </span>(!multipartFile.isEmpty()) {             <span style="color:#808080">//输出流 写物理路径 </span><span style="color:#808080">            </span>FileOutputStream wlStream = <span style="color:#cc7832">new </span>FileOutputStream(wlPath)<span style="color:#cc7832">; </span><span style="color:#cc7832">            </span><span style="color:#808080">//输出流 写临时路径 </span><span style="color:#808080">            </span>FileOutputStream lsStream = <span style="color:#cc7832">new </span>FileOutputStream(lsPath)<span style="color:#cc7832">; </span><span style="color:#cc7832">            int </span>len = <span style="color:#6897bb">0</span><span style="color:#cc7832">; </span><span style="color:#cc7832">            while </span>((len = inputStream.read()) != -<span style="color:#6897bb">1</span>) {                 wlStream.write(len)<span style="color:#cc7832">;</span><span style="color:#808080">//写入 </span><span style="color:#808080">                </span>lsStream.write(len)<span style="color:#cc7832">; </span><span style="color:#cc7832"> </span><span style="color:#cc7832">            </span>}             wlStream.flush()<span style="color:#cc7832">; </span><span style="color:#cc7832">            </span>lsStream.flush()<span style="color:#cc7832">; </span><span style="color:#cc7832"> </span><span style="color:#cc7832">            </span>wlStream.close()<span style="color:#cc7832">; </span><span style="color:#cc7832">            </span>lsStream.close()<span style="color:#cc7832">; </span><span style="color:#cc7832"> </span><span style="color:#cc7832">            </span>inputStream.close()<span style="color:#cc7832">; </span><span style="color:#cc7832"> </span><span style="color:#cc7832">        </span>}         System.<span style="color:#9876aa"><em>out</em></span>.println(wlPath)<span style="color:#cc7832">; </span><span style="color:#cc7832">        </span>System.<span style="color:#9876aa"><em>out</em></span>.println(ljPath)<span style="color:#cc7832">; </span><span style="color:#cc7832">        </span>System.<span style="color:#9876aa"><em>out</em></span>.println(lsPath)<span style="color:#cc7832">; </span>stock.setStockPhoto(ljPath)<span style="color:#cc7832">; </span><span style="color:#cc7832">        </span><span style="color:#9876aa">stockService</span>.addStock(stock)<span style="color:#cc7832">; </span><span style="color:#cc7832">         </span><span style="color:#cc7832">        return  </span><span style="color:#6a8759">"redirect:findStockAll.action"</span><span style="color:#cc7832">; </span><span style="color:#cc7832">         </span><span style="color:#cc7832">    </span>}</pre> <p> </div> <div>   </div> <div>   </div> <div>   </div> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-88486.htm">被猫抓了一下出了点血什么时候打针（被猫抓出血要在几小时内打针）</a></p>
+                                        <p>下一个：<a href="/news/article-89226.htm">动物疫苗生产企业资质（生产动物疫苗所需资质）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-85600.htm" title="动物疫苗生产资质要求（动物疫苗生产资质要求是什么）">动物疫苗生产资质要求（动物疫苗生产资质要求是什么）</a></li>
+                        <li class="py-2"><a href="/news/article-82734.htm" title="包含猫领养免费平台的词条">包含猫领养免费平台的词条</a></li>
+                        <li class="py-2"><a href="/news/article-75844.htm" title="中国动物疫苗十强上市公司（中国动物疫苗10强企业）">中国动物疫苗十强上市公司（中国动物疫苗10强企业）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-free-node-subscribe.htm" title="VPN Tiktok | 3月7日18.9M/S|免费VPN/Shadowrocket/V2ray/SSR/Clash免费节点订阅分享">VPN Tiktok | 3月7日18.9M/S|免费VPN/Shadowrocket/V2ray/SSR/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-79940.htm" title="动物医院住院部护理（动物医院前台）">动物医院住院部护理（动物医院前台）</a></li>
+                        <li class="py-2"><a href="/news/article-71818.htm" title="宠物店寄养会有什么风险（宠物店寄养一般怎么收费）">宠物店寄养会有什么风险（宠物店寄养一般怎么收费）</a></li>
+                        <li class="py-2"><a href="/news/article-72470.htm" title="猫如何做驱虫（猫怎么做驱虫 知乎）">猫如何做驱虫（猫怎么做驱虫 知乎）</a></li>
+                        <li class="py-2"><a href="/news/article-82019.htm" title="宠物领养协议书范本大全最新版 宠物领养协议书范本大全最新版图片">宠物领养协议书范本大全最新版 宠物领养协议书范本大全最新版图片</a></li>
+                        <li class="py-2"><a href="/news/article-73139.htm" title="动物疫苗生产厂家排名榜前十名图片（动物疫苗品牌）">动物疫苗生产厂家排名榜前十名图片（动物疫苗品牌）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-clash-v2ray-ss-ssr.htm" title="VPN Tiktok | 3月23日20.3M/S|免费VPN/SSR/Shadowrocket/V2ray/Clash免费节点订阅分享">VPN Tiktok | 3月23日20.3M/S|免费VPN/SSR/Shadowrocket/V2ray/Clash免费节点订阅分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="pt-4 pb-5 bg-light position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt-4">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">VPN Tiktok 机场订阅节点中文网</a> 版权所有 Powered by WordPress
+                    </div>
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.container-->
+        </footer>
+        <script src="/assets/website/js/frontend/singboxwindows/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/assets/website/js/frontend/singboxwindows/app.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </main>
+</body>
+
+</html>
