@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpntiktok.github.io/news/article-98775.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java8新特性之Instant详解</title>
+        <meta name="description" content="计算机存储的当前时间，本质上只是一个不断递增的整数。Java提供的System.currentTimeMillis()返回的就是以毫秒表示的当前时间戳。 这个当前时间戳在java.time中以Inst" />
+        <link rel="icon" href="/assets/website/img/singboxwindows/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN Tiktok 机场订阅节点中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpntiktok.github.io/news/article-98775.htm" />
+    <meta property="og:site_name" content="VPN Tiktok 机场订阅节点中文网" />
+    <meta property="og:title" content="Java8新特性之Instant详解" />
+    <meta property="og:image" content="https://vpntiktok.github.io/uploads/20240731/abb6b91f60d1692b85e4fbc5e4912b74.webp" />
+        <meta property="og:release_date" content="2025-04-18T09:41:13" />
+    <meta property="og:updated_time" content="2025-04-18T09:41:13" />
+        <meta property="og:description" content="计算机存储的当前时间，本质上只是一个不断递增的整数。Java提供的System.currentTimeMillis()返回的就是以毫秒表示的当前时间戳。 这个当前时间戳在java.time中以Inst" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java8新特性之Instant详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="/assets/website/css/singboxwindows/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WMKTGTP287"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WMKTGTP287');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg fixed-top py-3 navbar-light" id="mainNav">
+        <div class="container"> 
+            <a class="navbar-brand" href="/">
+                        <span>VPN Tiktok</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item"> <a class="nav-link" href="/">首页</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/free-nodes/">免费节点</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/paid-subscribe/">推荐机场</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/news/">新闻资讯</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/client.htm">客户端</a> </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <main role="main">
+        <div class="contact_header jumbotron text-center">
+            <h1 class="display-4">Java8新特性之Instant详解</h1>
+            <p>
+                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+            </p>
+        </div>
+        <section class="bg-image-2 position-relative"> <img src="/assets/website/img/singboxwindows/mix-icons.png" alt="" class="bg-img-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>计算机存储的当前时间，本质上只是一个不断递增的整数。Java提供的<code>System.currentTimeMillis()</code>返回的就是以毫秒表示的当前时间戳。</p> <p>这个当前时间戳在<code>java.time</code>中以<code>Instant</code>类型表示，我们用<code>Instant.now()</code>获取当前时间戳，效果和<code>System.currentTimeMillis()</code>类似：</p> <pre><code class="language-java">public class Main {     public static void main(String[] args) {         Instant now = Instant.now();         System.out.println(now.getEpochSecond()); // 秒  1568568760         System.out.println(now.toEpochMilli()); // 毫秒  1568568760316     } }</code></pre> <p>实际上，<code>Instant</code>内部只有两个核心字段：</p> <pre><code class="language-java">public final class Instant implements ... {     private final long seconds;     private final int nanos; }</code></pre> <p>一个是以秒为单位的时间戳，一个是更精确的纳秒精度。它和<code>System.currentTimeMillis()</code>返回的<code>long</code>相比，只是多了更高精度的纳秒。</p> <p>既然<code>Instant</code>就是时间戳，那么，给它附加上一个时区，就可以创建出<code>ZonedDateTime</code>：</p> <pre><code class="language-java">// 以指定时间戳创建Instant: Instant ins = Instant.ofEpochSecond(1568568760); ZonedDateTime zdt = ins.atZone(ZoneId.systemDefault()); System.out.println(zdt); // 2019-09-16T01:32:40+08:00[Asia/Shanghai]</code></pre> <p>可见，对于某一个时间戳，给它关联上指定的<code>ZoneId</code>，就得到了<code>ZonedDateTime</code>，继而可以获得了对应时区的<code>LocalDateTime</code>。</p> <p>所以，<code>LocalDateTime</code>，<code>ZoneId</code>，<code>Instant</code>，<code>ZonedDateTime</code>和<code>long</code>都可以互相转换：</p> <pre><code class="language-java">┌─────────────┐ │LocalDateTime│────┐ └─────────────┘    │    ┌─────────────┐                    ├───&gt;│ZonedDateTime│ ┌─────────────┐    │    └─────────────┘ │   ZoneId    │────┘           ▲ └─────────────┘      ┌─────────┴─────────┐                      │                   │                      ▼                   ▼               ┌─────────────┐     ┌─────────────┐               │   Instant   │&lt;───&gt;│    long     │               └─────────────┘     └─────────────┘</code></pre> <p>转换的时候，只需要留意<code>long</code>类型以毫秒还是秒为单位即可。</p> <h3>小结</h3> <p><code>Instant</code>表示高精度时间戳，它可以和<code>ZonedDateTime</code>以及<code>long</code>互相转换。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-98106.htm">动物园宠物店营业时间北京（北京动物园狗狗）</a></p>
+                                        <p>下一个：<a href="/news/article-98776.htm">小猫养多久才认家（小猫刚开始养多久能认识主人）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-free-high-speed-nodes.htm" title="VPN Tiktok | 3月18日21.6M/S|免费VPN/Shadowrocket/SSR/V2ray/Clash免费节点订阅分享">VPN Tiktok | 3月18日21.6M/S|免费VPN/Shadowrocket/SSR/V2ray/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-10-free-high-speed-nodes.htm" title="VPN Tiktok | 4月10日22.8M/S|免费VPN/Shadowrocket/Clash/V2ray/SSR免费节点订阅分享">VPN Tiktok | 4月10日22.8M/S|免费VPN/Shadowrocket/Clash/V2ray/SSR免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-71816.htm" title="Go 互斥锁（sync.Mutex）和 读写锁（sync.RWMutex）">Go 互斥锁（sync.Mutex）和 读写锁（sync.RWMutex）</a></li>
+                        <li class="py-2"><a href="/news/article-95161.htm" title="vue实现文字滚动效果_vue.js">vue实现文字滚动效果_vue.js</a></li>
+                        <li class="py-2"><a href="/news/article-77194.htm" title="宠物领养网站设计参考文献有哪些呢（宠物领养网站设计参考文献有哪些呢）">宠物领养网站设计参考文献有哪些呢（宠物领养网站设计参考文献有哪些呢）</a></li>
+                        <li class="py-2"><a href="/news/article-93631.htm" title="南京宠物狗领养地址查询电话（南京狗狗领养中心在哪里）">南京宠物狗领养地址查询电话（南京狗狗领养中心在哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-94450.htm" title="宠物店粮食摆放图片大全（宠物店的粮适合买吗）">宠物店粮食摆放图片大全（宠物店的粮适合买吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-11-node-share-links.htm" title="VPN Tiktok | 4月11日21M/S|免费VPN/Clash/V2ray/SSR/Shadowrocket免费节点订阅分享">VPN Tiktok | 4月11日21M/S|免费VPN/Clash/V2ray/SSR/Shadowrocket免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-98776.htm" title="小猫养多久才认家（小猫刚开始养多久能认识主人）">小猫养多久才认家（小猫刚开始养多久能认识主人）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-15-node-share-links.htm" title="VPN Tiktok | 4月15日19.2M/S|免费VPN/SSR/Shadowrocket/Clash/V2ray免费节点订阅分享">VPN Tiktok | 4月15日19.2M/S|免费VPN/SSR/Shadowrocket/Clash/V2ray免费节点订阅分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="pt-4 pb-5 bg-light position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt-4">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">VPN Tiktok 机场订阅节点中文网</a> 版权所有 Powered by WordPress
+                    </div>
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.container-->
+        </footer>
+        <script src="/assets/website/js/frontend/singboxwindows/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/assets/website/js/frontend/singboxwindows/app.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </main>
+</body>
+
+</html>
