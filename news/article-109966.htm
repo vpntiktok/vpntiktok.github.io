@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpntiktok.github.io/news/article-109966.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>netty系列之:netty中各不同种类的channel详解</title>
+        <meta name="description" content="文章目录  简介 ServerChannel和它的类型   Epoll和Kqueue AbstractServerChannel ServerSocketChannel ServerDomainSoc" />
+        <link rel="icon" href="/assets/website/img/singboxwindows/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN Tiktok 机场订阅节点中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpntiktok.github.io/news/article-109966.htm" />
+    <meta property="og:site_name" content="VPN Tiktok 机场订阅节点中文网" />
+    <meta property="og:title" content="netty系列之:netty中各不同种类的channel详解" />
+    <meta property="og:image" content="https://vpntiktok.github.io/uploads/20240731/356abe308237bd1398a3f173d75cb408.webp" />
+        <meta property="og:release_date" content="2025-05-02T09:24:15" />
+    <meta property="og:updated_time" content="2025-05-02T09:24:15" />
+        <meta property="og:description" content="文章目录  简介 ServerChannel和它的类型   Epoll和Kqueue AbstractServerChannel ServerSocketChannel ServerDomainSoc" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="netty系列之:netty中各不同种类的channel详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="/assets/website/css/singboxwindows/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WMKTGTP287"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WMKTGTP287');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg fixed-top py-3 navbar-light" id="mainNav">
+        <div class="container"> 
+            <a class="navbar-brand" href="/">
+                        <span>VPN Tiktok</span>
+                        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item"> <a class="nav-link" href="/">首页</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/free-nodes/">免费节点</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/paid-subscribe/">推荐机场</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/news/">新闻资讯</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="/client.htm">客户端</a> </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <main role="main">
+        <div class="contact_header jumbotron text-center">
+            <h1 class="display-4">netty系列之:netty中各不同种类的channel详解</h1>
+            <p>
+                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+            </p>
+        </div>
+        <section class="bg-image-2 position-relative"> <img src="/assets/website/img/singboxwindows/mix-icons.png" alt="" class="bg-img-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>文章目录</h3> <ul> <li>简介</li> <li>ServerChannel和它的类型</li> <li> <ul> <li>Epoll和Kqueue</li> <li>AbstractServerChannel</li> <li>ServerSocketChannel</li> <li>ServerDomainSocketChannel</li> <li>SctpServerChannel</li> </ul> </li> <li>Channel和它的类型</li> <li> <ul> <li>UnixChannel</li> <li>SctpChannel</li> <li>DatagramChannel</li> <li>DomainDatagramChannel</li> <li>DuplexChannel</li> <li>AbstractChannel</li> </ul> </li> <li>总结</li> </ul> </div> </h1> <p>channel是连接客户端和服务器端的桥梁，在netty中我们最常用的就是NIO，一般和NioEventLoopGroup配套使用的就是NioServerSocketChannel和NioSocketChannel，如果是UDP协议，那么配套使用的就是NioDatagramChannel，如果是别的协议还有其他不同的Channel类型。</p> <p>这些不同channel类型有什么区别呢？一个直观的感觉就是不同的channel和channel连接使用的协议有关系，不同的channel可能适配了不同的连接协议。</p> <p>事实到底是不是如此呢？在netty的内部实现中到底有多少种channel呢？今天一起来探讨一下。</p> </h1> <p>虽然ServerChannel继承自Channel，但是ServerChannel本身并没有添加任何新的方法：</p> <pre><code>public interface ServerChannel extends Channel {  }</code></pre> <p>所以对ServerChannel和Channel来说都可以看做是Channel，他们只是语义上有区别。</p> <p>但是因为ServerChannel继承自Channel，所以相对的ServerChannel的分类和实现要比Channel要少。所以我们先以ServerChannel为例进行讲解。</p> <p>ServerChannel的实现也有很多，我们以Abstract*开头的实现为例，下面是他们的继承关系：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/30e780b3e04849e8c6e7dce703992b77.jpg" alt="netty系列之:netty中各不同种类的channel详解"/></p> <p>从上图我们可以看出，ServerChannel有六个抽象类实现，分别是AbstractEpollServerChannel,AbstractKQueueServerChannel,AbstractServerChannel,ServerSocketChannel,SctpServerChannel和ServerDomainSocketChannel。</p> <p>其中前面三个抽象类同时继承自AbstractChannel。</p> <h2>Epoll和Kqueue</h2> <p>Epoll和Kqueue是两个独特的依赖于特定平台的NIO协议，其中epoll只在linux平台才支持,而kQueue则在FreeBSD、NetBSD、OpenBSD、macOS 等操作系统支持。</p> <p>我们来看下AbstractEpollServerChannel的构造函数：</p> <pre><code>    protected AbstractEpollServerChannel(int fd) {         this(new LinuxSocket(fd), false);     }      AbstractEpollServerChannel(LinuxSocket fd) {         this(fd, isSoErrorZero(fd));     }      AbstractEpollServerChannel(LinuxSocket fd, boolean active) {         super(null, fd, active);     }</code></pre> <p>所有的构造函数都需要一个LinuxSocket的参数，LinuxSocket是一个socket用来提供对于linux native方法的访问支持。</p> <p>同样的，我们再看一下AbstractKQueueServerChannel的构造函数：</p> <pre><code>    AbstractKQueueServerChannel(BsdSocket fd) {         this(fd, isSoErrorZero(fd));     }      AbstractKQueueServerChannel(BsdSocket fd, boolean active) {         super(null, fd, active);     }</code></pre> <p>AbstractKQueueServerChannel的构造函数需要传入一个BsdSocket参数，BsdSocket是一个类用来提供对BSD系统的本地方法的访问。</p> <h2>AbstractServerChannel</h2> <p>AbstractServerChannel我们在之前的channel一章中已经讲过了，它的唯一实现就是LocalServerChannel，用于本地的transport。</p> <h2>ServerSocketChannel</h2> <p>ServerSocketChannel是一个以Socket连接为基础的ServerChannel，既然是Socket连接，那么ServerSocketChannel中提供了一个InetSocketAddress类型的localAddress和一个remoteAddress, 另外还有一个ServerSocketChannelConfig属性，用来存储ServerSocketChannel相关的配置信息：</p> <pre><code>public interface ServerSocketChannel extends ServerChannel {     @Override     ServerSocketChannelConfig config();     @Override     InetSocketAddress localAddress();     @Override     InetSocketAddress remoteAddress(); }</code></pre> <h2>ServerDomainSocketChannel</h2> <p>ServerDomainSocketChannel是使用DomainSocket来进行通讯的ServerChannel。什么是DomainSocket呢？</p> <p>DomainSocket的全称是unix domain socket，它又可以叫做IPC socket,也就是inter-process communication socket，是在unix平台上的同一服务器上的进程通信方式。</p> <p>我们知道，协议是比较复杂的，对于传统的socket通讯来说,需要定制特定的协议，然后进行封包和解包等操作，但是使用DomainSocket，可以直接将进程的数据直接拷贝，从而节约了时间，并提高了程序的效率。</p> <p>DomainSocket的地址是一个文件的路径，实际上是下面的一个结构体：</p> <pre><code>struct sockaddr_un {     sa_family_t     sun_family;     /* AF_UNIX ，2字节*/     char    sun_path[UNIX_PATH_MAX];        /* 路径名 */ };</code></pre> <p>在ServerDomainSocketChannel中的remoteAddress和localAddress的类型都是DomainSocketAddress,DomainSocketAddress有一个socketPath属性，用来存储DomainSocket文件的路径。</p> <h2>SctpServerChannel</h2> <p>最后一个要讲解的ServerChannel是SctpServerChannel，Sctp的全称是Stream Control Transmission Protocol，他是一种类似于TCP/IP的协议。和SocketServerChannel一样，SctpServerChannel中也有一个config叫做SctpServerChannelConfig，还提供了多个bindAddress方法用来绑定InetAddress.</p> <p>有关Sctp协议的具体内容，本章不深入讨论，感兴趣的朋友可以关注后续的章节。</p> </h1> <p>Channel作为ServerChannel的父类，又有哪些实现呢？</p> <p>先来看下常用channel的实现类：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/ba21160ec2caf96cbbcd9be425b38462.jpg" alt="netty系列之:netty中各不同种类的channel详解"/></p> <p>看起来channel的实现类非常多，基本上都是按照channel中使用传输协议的类型来的。</p> <p>我们具体来看一下相应的实现类。</p> <h2>UnixChannel</h2> <p>UnixChannel表示的unix平台上的操作，它有一个fd方法，返回一个FileDescriptor:</p> <pre><code>FileDescriptor fd();</code></pre> <p>这也是unix和windows平台的区别之一，unix平台所有的一切都可以用文件来表示。</p> <h2>SctpChannel</h2> <p>在上面我讲SctpServerChannel的时候我们提过了，Sctp是一个类似于tcp/ip的协议，SctpChannel中定义了协议中需要使用到的localAddress和remoteAddress:</p> <pre><code>InetSocketAddress localAddress();  InetSocketAddress remoteAddress();</code></pre> <p>同时还定义了一些绑定方法：</p> <pre><code>    ChannelFuture bindAddress(InetAddress var1);      ChannelFuture bindAddress(InetAddress var1, ChannelPromise var2);      ChannelFuture unbindAddress(InetAddress var1);      ChannelFuture unbindAddress(InetAddress var1, ChannelPromise var2);</code></pre> <h2>DatagramChannel</h2> <p>DatagramChannel用来处理UDP协议的连接，因为UDP有广播的功能，所以DatagramChannel中提供了joinGroup的方法，来join一个multicast group:</p> <pre><code>ChannelFuture joinGroup(InetAddress multicastAddress);</code></pre> <p>当然，可以join就可以leave，还有一些leaveGroup的方法：</p> <pre><code>ChannelFuture leaveGroup(InetAddress multicastAddress);</code></pre> <p>还可以block某些地址在给定的networkInterface上的广播：</p> <pre><code>ChannelFuture block(             InetAddress multicastAddress, NetworkInterface networkInterface,             InetAddress sourceToBlock);</code></pre> <p>这些方法都和UDP的特性是息息相关的。</p> <h2>DomainDatagramChannel</h2> <p>DomainDatagramChannel和之前提到的ServerDomainSocketChannel一样，都是使用的IPC内部进程通讯技术，直接进行进程的拷贝，免去了协议解析等步骤，提升了处理速度。</p> <h2>DuplexChannel</h2> <p>DuplexChannel从名字看就是一个双向的channel，duplex Channel有一个特点，就是channel的两边可以独立的关闭，所以有下面的方法：</p> <pre><code>boolean isInputShutdown();  ChannelFuture shutdownInput();  boolean isOutputShutdown();  ChannelFuture shutdownOutput();</code></pre> <p>DuplexChannel的是实现有很多种，比如常见的NIOSocketChannel，KQueueSocketChannel,EpollSocketChannel等。</p> <h2>AbstractChannel</h2> <p>另外一个channel的非常重要的子类就是AbstractChannel，AbstractChannel有三个非常重要的实现，分别是AbstractNioChannel,AbstractKQueueChannel和AbstractEpollChannel。</p> <p>这三个类使用的都是NIO技术，不同的是第一个使用的是select，后面两个使用的是平台独有的KQueue和Epoll技术。</p> <p>其中NIO又可以分为NioByteChannel和NioMessageChannel,KQueue和Epoll又可以分为StreamChannel和DatagramChannel。</p> </h1> <p>以上就是channel在netty中的基本实现和分类。后面我们会详解讲解具体的channel到底是如何实现的。</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-109141.htm">北京中农大动物医院有限公司招聘 北京中农大动物医院有限公司招聘信息</a></p>
+                                        <p>下一个：<a href="/news/article-109969.htm">宠物出售网下司犬（宠物狗狗出售）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-12-free-v2ray.htm" title="VPN Tiktok | 4月12日20.5M/S|免费VPN/V2ray/SSR/Shadowrocket/Clash免费节点订阅分享">VPN Tiktok | 4月12日20.5M/S|免费VPN/V2ray/SSR/Shadowrocket/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-92877.htm" title="什么是https和http（https和http的区别）_在线工具">什么是https和http（https和http的区别）_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-102526.htm" title="pytorch 多GPU训练的模型在单卡或CPU上加载">pytorch 多GPU训练的模型在单卡或CPU上加载</a></li>
+                        <li class="py-2"><a href="/news/article-89225.htm" title="文件上传fileupload实现">文件上传fileupload实现</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-22-free-v2ray-subscribe.htm" title="VPN Tiktok | 4月22日18.5M/S|免费VPN/SSR/Shadowrocket/Clash/V2ray免费节点订阅分享">VPN Tiktok | 4月22日18.5M/S|免费VPN/SSR/Shadowrocket/Clash/V2ray免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-86311.htm" title="vue &#8211; 如何实现导入excel功能">vue &#8211; 如何实现导入excel功能</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-free-node-subscribe.htm" title="VPN Tiktok | 4月3日19M/S|免费VPN/Clash/V2ray/Shadowrocket/SSR免费节点订阅分享">VPN Tiktok | 4月3日19M/S|免费VPN/Clash/V2ray/Shadowrocket/SSR免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-10-free-high-speed-nodes.htm" title="VPN Tiktok | 4月10日22.8M/S|免费VPN/Shadowrocket/Clash/V2ray/SSR免费节点订阅分享">VPN Tiktok | 4月10日22.8M/S|免费VPN/Shadowrocket/Clash/V2ray/SSR免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-27-node-share-links.htm" title="VPN Tiktok | 4月27日21.4M/S|免费VPN/Shadowrocket/V2ray/SSR/Clash免费节点订阅分享">VPN Tiktok | 4月27日21.4M/S|免费VPN/Shadowrocket/V2ray/SSR/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-92158.htm" title="附近免费领养小猫小狗 附近免费领养小猫小狗的地方">附近免费领养小猫小狗 附近免费领养小猫小狗的地方</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="pt-4 pb-5 bg-light position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt-4">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <a href="/">VPN Tiktok 机场订阅节点中文网</a> 版权所有 Powered by WordPress
+                    </div>
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.container-->
+        </footer>
+        <script src="/assets/website/js/frontend/singboxwindows/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/assets/website/js/frontend/singboxwindows/app.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </main>
+</body>
+
+</html>
