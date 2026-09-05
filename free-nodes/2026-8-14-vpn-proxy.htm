@@ -297,9 +297,9 @@ tar -zxvf v2rayduyao.tar.gz
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 中的 alterId 是什么，现在还有必要配置吗？</h5></div>
+    <div class="panel-heading"><h5>Clash 如何通过命令行管理配置？</h5></div>
     <div class="panel-body">
-        alterId 曾用于 VMess 的用户混淆机制以防止重放攻击，但在 V2Ray 新版本与 VLess 出现后，alterId 已不再推荐使用。现代配置多使用 UUID 或直接迁移至 VLess/XTLS 以获得更好性能与安全性。<hr />    </div>
+        Clash 内置命令行接口，可用于启动、停止、切换配置或查看日志。通过命令行运行 `clash -f config.yaml` 可加载指定配置文件，适合服务器或无人值守场景。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>当 V2Ray 报错 inbound 没有监听，可能是哪些配置问题？</h5></div>
@@ -307,29 +307,9 @@ tar -zxvf v2rayduyao.tar.gz
         检查 inbound 配置是否包含正确的 port、protocol 与 listen 字段；确认没有端口冲突或权限问题（非 root 绑定 1024 以下端口会失败）；查看日志中具体错误信息并根据提示修复配置。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何通过命令行管理配置？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的“节点切换策略”如何配置？</h5></div>
     <div class="panel-body">
-        Clash 内置命令行接口，可用于启动、停止、切换配置或查看日志。通过命令行运行 `clash -f config.yaml` 可加载指定配置文件，适合服务器或无人值守场景。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆插件有什么作用？</h5></div>
-    <div class="panel-body">
-        混淆插件用于伪装流量，使其看起来像普通的 HTTP 或 TLS 请求。常见类型有 plain、tls1.2_ticket_auth 等。合理设置混淆能有效降低被识别的风险，提升连接成功率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的测速功能不显示结果怎么办？</h5></div>
-    <div class="panel-body">
-        测速依赖于节点响应时间与服务器网络质量。若测速为空白，请检查系统时间同步、网络防火墙及代理端口设置是否正确；也可更新到最新版本修复已知测速模块异常问题。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 能否同时运行多个代理？</h5></div>
-    <div class="panel-body">
-        Nekoray 支持多配置运行。用户可在“多配置模式”下同时开启不同协议或节点的代理，程序会自动创建多个监听端口，方便多应用或分流测试使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 的 Rule-Set 与 Clash Premium 是否兼容？</h5></div>
-    <div class="panel-body">
-        Mihomo 完全兼容 Clash Premium 的 Rule-Set 格式，支持相同的远程规则订阅与策略分组。用户可直接迁移原 Clash 配置，无需额外修改或转换。<hr />    </div>
+        在 PassWall2 中可设置多节点策略，如“按延迟排序”、“自动选择最快节点”等。程序会定期测速，根据实时数据自动切换线路，保证连接的稳定性和速度。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 如何通过策略组优化访问速度？</h5></div>
@@ -337,14 +317,34 @@ tar -zxvf v2rayduyao.tar.gz
         策略组允许用户将节点按延迟、地域或用途分组。结合路由规则，V2Ray 会自动选择最优节点处理流量，提升访问速度并降低延迟，尤其在访问海外网站时效果明显。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的“节点切换策略”如何配置？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的测速功能不显示结果怎么办？</h5></div>
     <div class="panel-body">
-        在 PassWall2 中可设置多节点策略，如“按延迟排序”、“自动选择最快节点”等。程序会定期测速，根据实时数据自动切换线路，保证连接的稳定性和速度。<hr />    </div>
+        测速依赖于节点响应时间与服务器网络质量。若测速为空白，请检查系统时间同步、网络防火墙及代理端口设置是否正确；也可更新到最新版本修复已知测速模块异常问题。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆插件有什么作用？</h5></div>
+    <div class="panel-body">
+        混淆插件用于伪装流量，使其看起来像普通的 HTTP 或 TLS 请求。常见类型有 plain、tls1.2_ticket_auth 等。合理设置混淆能有效降低被识别的风险，提升连接成功率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 的 Rule-Set 与 Clash Premium 是否兼容？</h5></div>
+    <div class="panel-body">
+        Mihomo 完全兼容 Clash Premium 的 Rule-Set 格式，支持相同的远程规则订阅与策略分组。用户可直接迁移原 Clash 配置，无需额外修改或转换。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 能否同时运行多个代理？</h5></div>
+    <div class="panel-body">
+        Nekoray 支持多配置运行。用户可在“多配置模式”下同时开启不同协议或节点的代理，程序会自动创建多个监听端口，方便多应用或分流测试使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 节点延迟检测如何优化网络访问？</h5></div>
     <div class="panel-body">
-        Clash 会定期测试节点延迟，并结合策略组自动选择最优节点。避免访问高延迟或失效节点，提升网页浏览、视频播放和游戏速度及稳定性，提高整体网络体验。    </div>
+        Clash 会定期测试节点延迟，并结合策略组自动选择最优节点。避免访问高延迟或失效节点，提升网页浏览、视频播放和游戏速度及稳定性，提高整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 中的 alterId 是什么，现在还有必要配置吗？</h5></div>
+    <div class="panel-body">
+        alterId 曾用于 VMess 的用户混淆机制以防止重放攻击，但在 V2Ray 新版本与 VLess 出现后，alterId 已不再推荐使用。现代配置多使用 UUID 或直接迁移至 VLess/XTLS 以获得更好性能与安全性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -392,16 +392,16 @@ tar -zxvf v2rayduyao.tar.gz
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-8-14-vpn-proxy.htm" title="VPN Tiktok | 8月14日21.6M/S|免费VPN/Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点免费节点订阅分享">VPN Tiktok | 8月14日21.6M/S|免费VPN/Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-12-free-node-subscribe.htm" title="VPN Tiktok | 8月12日21.7M/S|免费VPN/Trojan节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点免费节点订阅分享">VPN Tiktok | 8月12日21.7M/S|免费VPN/Trojan节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-8-21.htm" title="VPN Tiktok | 8月21日19.1M/S|免费VPN/Singbox节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点免费节点订阅分享">VPN Tiktok | 8月21日19.1M/S|免费VPN/Singbox节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-8-7.htm" title="VPN Tiktok | 8月7日20.4M/S|免费VPN/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点免费节点订阅分享">VPN Tiktok | 8月7日20.4M/S|免费VPN/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-9-3.htm" title="VPN Tiktok | 9月3日21.5M/S|免费VPN/Trojan节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享">VPN Tiktok | 9月3日21.5M/S|免费VPN/Trojan节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-top-vpn-node.htm" title="VPN Tiktok | 9月2日19.2M/S|免费VPN/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点订阅分享">VPN Tiktok | 9月2日19.2M/S|免费VPN/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-8-29.htm" title="VPN Tiktok | 8月29日21.8M/S|免费VPN/SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点免费节点订阅分享">VPN Tiktok | 8月29日21.8M/S|免费VPN/SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-vpn-node.htm" title="VPN Tiktok | 9月4日20M/S|免费VPN/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点/Singbox节点免费节点订阅分享">VPN Tiktok | 9月4日20M/S|免费VPN/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点/Singbox节点免费节点订阅分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/top-vpn-2026-8-17.htm" title="VPN Tiktok | 8月17日19.3M/S|免费VPN/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/SSR节点免费节点订阅分享">VPN Tiktok | 8月17日19.3M/S|免费VPN/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/SSR节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-10-vpn-free.htm" title="VPN Tiktok | 8月10日20M/S|免费VPN/Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点免费节点订阅分享">VPN Tiktok | 8月10日20M/S|免费VPN/Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-7-31.htm" title="VPN Tiktok | 7月31日20.7M/S|免费VPN/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点免费节点订阅分享">VPN Tiktok | 7月31日20.7M/S|免费VPN/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-23-share-vpn.htm" title="VPN Tiktok | 7月23日20.4M/S|免费VPN/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/Singbox节点/SSR节点免费节点订阅分享">VPN Tiktok | 7月23日20.4M/S|免费VPN/Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/Singbox节点/SSR节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-21-share-vpn.htm" title="VPN Tiktok | 7月21日21.5M/S|免费VPN/Shadowrocket节点/SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点免费节点订阅分享">VPN Tiktok | 7月21日21.5M/S|免费VPN/Shadowrocket节点/SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-28-top-vpn-node.htm" title="VPN Tiktok | 7月28日22.2M/S|免费VPN/V2ray节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点免费节点订阅分享">VPN Tiktok | 7月28日22.2M/S|免费VPN/V2ray节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-26-vpn-node.htm" title="VPN Tiktok | 7月26日19.1M/S|免费VPN/Shadowrocket节点/V2ray节点/Trojan节点/Clash节点/SSR节点/Singbox节点免费节点订阅分享">VPN Tiktok | 7月26日19.1M/S|免费VPN/Shadowrocket节点/V2ray节点/Trojan节点/Clash节点/SSR节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-6-free-vpn-node.htm" title="VPN Tiktok | 8月6日22.2M/S|免费VPN/Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点免费节点订阅分享">VPN Tiktok | 8月6日22.2M/S|免费VPN/Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-28-free-vpn-node.htm" title="VPN Tiktok | 8月28日18.4M/S|免费VPN/SSR节点/Clash节点/V2ray节点/Singbox节点/Trojan节点/Shadowrocket节点免费节点订阅分享">VPN Tiktok | 8月28日18.4M/S|免费VPN/SSR节点/Clash节点/V2ray节点/Singbox节点/Trojan节点/Shadowrocket节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-30-free-node-subscribe.htm" title="VPN Tiktok | 8月30日19.1M/S|免费VPN/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点免费节点订阅分享">VPN Tiktok | 8月30日19.1M/S|免费VPN/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-13.htm" title="VPN Tiktok | 8月13日21.8M/S|免费VPN/V2ray节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享">VPN Tiktok | 8月13日21.8M/S|免费VPN/V2ray节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -413,10 +413,10 @@ tar -zxvf v2rayduyao.tar.gz
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
