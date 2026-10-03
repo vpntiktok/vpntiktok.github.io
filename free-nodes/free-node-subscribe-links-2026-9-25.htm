@@ -126,26 +126,6 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 在使用订阅时要注意什么？</h5></div>
-    <div class="panel-body">
-        在 Shadowrocket 中添加订阅时，应确保链接以 https 开头且格式正确。此外，若节点更新失败，可尝试关闭缓存或重新获取订阅链接，以保证配置文件同步最新节点数据。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 节点健康检测如何提高稳定性？</h5></div>
-    <div class="panel-body">
-        WinXray 会定期检测节点延迟和丢包率，并结合策略组自动切换到最优节点。避免高延迟或失效节点，提高网页浏览、视频播放和游戏连接的速度和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆参数该如何填写？</h5></div>
-    <div class="panel-body">
-        SSR 混淆参数位于节点配置中，通常选择如 tls1.2_ticket_auth 或 http_simple。参数字段可以自定义伪装主机或路径，以模拟正常流量行为，从而提高隐蔽性和抗封锁能力。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 节点延迟排序功能如何使用？</h5></div>
-    <div class="panel-body">
-        Matsuri 会定期测速节点延迟，并结合策略组自动选择延迟最低节点。用户无需手动切换即可保持高速访问，优化网页、视频和游戏体验，提高网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的 obfs 混淆原理是什么？</h5></div>
     <div class="panel-body">
         SSR 的 obfs 模块通过模拟常见流量特征（如 HTTPS 或 HTTP 请求头）来掩盖加密流量。这样可让代理流量看起来像正常的网页访问，从而有效降低被检测和封锁的风险。<hr />    </div>
@@ -161,19 +141,39 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         推荐使用可信 CA 签发的证书（例如 Let's Encrypt），并为服务器配置正确的域名、SNI 与证书链。避免使用自签名证书或错误域名，以免被客户端拒绝或被中间人攻击检测到。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆参数该如何填写？</h5></div>
+    <div class="panel-body">
+        SSR 混淆参数位于节点配置中，通常选择如 tls1.2_ticket_auth 或 http_simple。参数字段可以自定义伪装主机或路径，以模拟正常流量行为，从而提高隐蔽性和抗封锁能力。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 节点健康检测如何提高稳定性？</h5></div>
+    <div class="panel-body">
+        WinXray 会定期检测节点延迟和丢包率，并结合策略组自动切换到最优节点。避免高延迟或失效节点，提高网页浏览、视频播放和游戏连接的速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 在使用订阅时要注意什么？</h5></div>
+    <div class="panel-body">
+        在 Shadowrocket 中添加订阅时，应确保链接以 https 开头且格式正确。此外，若节点更新失败，可尝试关闭缓存或重新获取订阅链接，以保证配置文件同步最新节点数据。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>VMess AEAD 加密在高封锁网络中有何优势？</h5></div>
     <div class="panel-body">
         AEAD 加密能防止流量被篡改或重放，并隐藏流量特征。在高封锁网络中，使用 AEAD 可以提高节点稳定性和长期可用性，同时确保数据安全和隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何为 Vmess 节点生成安全的 UUID？</h5></div>
-    <div class="panel-body">
-        UUID 应使用标准的 128 位格式，可使用系统命令如 `uuidgen` 或在线 UUID 生成器生成随机、唯一的 ID；不要使用默认或弱随机值，定期更换以降低被滥用或泄露的风险。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的混淆方式如何选择最合适？</h5></div>
     <div class="panel-body">
-        根据网络环境选择适合的混淆方式，如 tls1.2_ticket_auth 模拟 HTTPS 流量，可隐藏真实特征。结合协议插件使用，可以提高抗封锁能力和节点可用性。    </div>
+        根据网络环境选择适合的混淆方式，如 tls1.2_ticket_auth 模拟 HTTPS 流量，可隐藏真实特征。结合协议插件使用，可以提高抗封锁能力和节点可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 节点延迟排序功能如何使用？</h5></div>
+    <div class="panel-body">
+        Matsuri 会定期测速节点延迟，并结合策略组自动选择延迟最低节点。用户无需手动切换即可保持高速访问，优化网页、视频和游戏体验，提高网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何为 Vmess 节点生成安全的 UUID？</h5></div>
+    <div class="panel-body">
+        UUID 应使用标准的 128 位格式，可使用系统命令如 `uuidgen` 或在线 UUID 生成器生成随机、唯一的 ID；不要使用默认或弱随机值，定期更换以降低被滥用或泄露的风险。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -221,16 +221,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-5.htm" title="VPN Tiktok | 9月5日20.9M/S|免费VPN/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点免费节点订阅分享">VPN Tiktok | 9月5日20.9M/S|免费VPN/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-6-free-vpn-node.htm" title="VPN Tiktok | 8月6日22.2M/S|免费VPN/Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点免费节点订阅分享">VPN Tiktok | 8月6日22.2M/S|免费VPN/Trojan节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-8-7.htm" title="VPN Tiktok | 8月7日20.4M/S|免费VPN/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点免费节点订阅分享">VPN Tiktok | 8月7日20.4M/S|免费VPN/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-14-vpn-proxy.htm" title="VPN Tiktok | 8月14日21.6M/S|免费VPN/Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点免费节点订阅分享">VPN Tiktok | 8月14日21.6M/S|免费VPN/Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-8-21.htm" title="VPN Tiktok | 8月21日19.1M/S|免费VPN/Singbox节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点免费节点订阅分享">VPN Tiktok | 8月21日19.1M/S|免费VPN/Singbox节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-23.htm" title="VPN Tiktok | 9月23日22M/S|免费VPN/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/Singbox节点免费节点订阅分享">VPN Tiktok | 9月23日22M/S|免费VPN/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/Singbox节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-9-7.htm" title="VPN Tiktok | 9月7日20.4M/S|免费VPN/Clash节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点免费节点订阅分享">VPN Tiktok | 9月7日20.4M/S|免费VPN/Clash节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-9-26-vpn-free.htm" title="VPN Tiktok | 9月26日18.4M/S|免费VPN/SSR节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点免费节点订阅分享">VPN Tiktok | 9月26日18.4M/S|免费VPN/SSR节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-10-free-vpn-node.htm" title="VPN Tiktok | 9月10日23M/S|免费VPN/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点免费节点订阅分享">VPN Tiktok | 9月10日23M/S|免费VPN/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点免费节点订阅分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-19.htm" title="VPN Tiktok | 9月19日21.9M/S|免费VPN/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点免费节点订阅分享">VPN Tiktok | 9月19日21.9M/S|免费VPN/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-vpn-node.htm" title="VPN Tiktok | 9月4日20M/S|免费VPN/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点/Singbox节点免费节点订阅分享">VPN Tiktok | 9月4日20M/S|免费VPN/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-17.htm" title="VPN Tiktok | 9月17日18.3M/S|免费VPN/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点免费节点订阅分享">VPN Tiktok | 9月17日18.3M/S|免费VPN/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-22-free-node-subscribe.htm" title="VPN Tiktok | 9月22日18.3M/S|免费VPN/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Clash节点/Singbox节点免费节点订阅分享">VPN Tiktok | 9月22日18.3M/S|免费VPN/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Clash节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-top-vpn-node.htm" title="VPN Tiktok | 9月2日19.2M/S|免费VPN/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点订阅分享">VPN Tiktok | 9月2日19.2M/S|免费VPN/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-23.htm" title="VPN Tiktok | 9月23日22M/S|免费VPN/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/Singbox节点免费节点订阅分享">VPN Tiktok | 9月23日22M/S|免费VPN/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-9-21.htm" title="VPN Tiktok | 9月21日18.4M/S|免费VPN/Clash节点/Singbox节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点免费节点订阅分享">VPN Tiktok | 9月21日18.4M/S|免费VPN/Clash节点/Singbox节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-9-15.htm" title="VPN Tiktok | 9月15日21M/S|免费VPN/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点免费节点订阅分享">VPN Tiktok | 9月15日21M/S|免费VPN/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-30-vpn-free.htm" title="VPN Tiktok | 9月30日18.4M/S|免费VPN/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点免费节点订阅分享">VPN Tiktok | 9月30日18.4M/S|免费VPN/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点免费节点订阅分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -242,10 +242,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                     </ul>
     </div>
