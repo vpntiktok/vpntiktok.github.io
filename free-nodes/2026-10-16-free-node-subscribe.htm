@@ -202,44 +202,9 @@ Clash支持Windows、macOS、Linux、iOS、Android等多平台。用户需先根
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 使用 AEAD 加密的优势是什么？</h5></div>
+    <div class="panel-heading"><h5>Clash 是否支持 DNS 分流？</h5></div>
     <div class="panel-body">
-        AEAD 加密提供更强的安全性和抗重放攻击能力，同时隐藏流量特征，降低被 DPI 检测风险。在高封锁环境下使用，可提升连接稳定性和长期可用性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何检测并处理订阅中的死节点？</h5></div>
-    <div class="panel-body">
-        定期运行批量测速脚本或使用客户端内置的 url-test、health-check 功能，自动标记或移除响应超时或重连失败的节点。结合订阅更新策略可自动替换或提醒用户维护节点列表。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 与 Clash 的核心区别是什么？</h5></div>
-    <div class="panel-body">
-        Mellow 采用基于透明代理的架构，适合路由或系统级流量重定向，而 Clash 更偏向规则式应用代理。Mellow 的灵活性更高，但配置复杂；Clash 则兼顾易用性与功能扩展性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 全局与规则代理如何选择？</h5></div>
-    <div class="panel-body">
-        全局代理将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，用户可根据需求灵活选择模式。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess MUX 功能如何改善短连接延迟？</h5></div>
-    <div class="panel-body">
-        VMess MUX 多路复用可以将多个短连接共享同一 TCP 或 QUIC 隧道，减少重复握手和连接延迟，特别适合游戏、即时通讯或频繁请求的场景，有效提升响应速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的证书配置错误会导致什么问题？</h5></div>
-    <div class="panel-body">
-        如果 TLS 证书无效或域名不匹配，Trojan 客户端将无法建立安全连接，导致节点无法使用。需要确保证书有效、域名正确，才能保证正常访问。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何识别节点是否被封锁或限速？</h5></div>
-    <div class="panel-body">
-        通过对比不同节点的 speedtest、ping、下载测速以及 traceroute 路由变化来判断；若多个节点同时异常可能是本地网络问题，单个节点异常则可能被封锁或运营商限速，应尝试更换端口或传输方式。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的策略组可按 IP 段分流吗？</h5></div>
-    <div class="panel-body">
-        支持。可通过 IP 段匹配将流量分流到指定节点。结合策略组，可实现国内直连、国外代理或游戏加速，实现精细化流量管理和优化网络访问。<hr />    </div>
+        支持。Clash 可以自定义 DNS 服务器，并通过 rules 区分国内外域名解析方式。比如国内网站可使用本地 DNS，国外网站可走代理 DNS，从而提升访问速度与稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的协议插件如何增强连接稳定性？</h5></div>
@@ -247,9 +212,44 @@ Clash支持Windows、macOS、Linux、iOS、Android等多平台。用户需先根
         SSR 的协议插件可以增加流量的伪装特性，模拟常见协议或浏览器行为，从而降低被识别和封锁的风险。这对不稳定网络或高封锁环境尤其有帮助。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 是否支持 DNS 分流？</h5></div>
+    <div class="panel-heading"><h5>Trojan 的证书配置错误会导致什么问题？</h5></div>
     <div class="panel-body">
-        支持。Clash 可以自定义 DNS 服务器，并通过 rules 区分国内外域名解析方式。比如国内网站可使用本地 DNS，国外网站可走代理 DNS，从而提升访问速度与稳定性。    </div>
+        如果 TLS 证书无效或域名不匹配，Trojan 客户端将无法建立安全连接，导致节点无法使用。需要确保证书有效、域名正确，才能保证正常访问。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess MUX 功能如何改善短连接延迟？</h5></div>
+    <div class="panel-body">
+        VMess MUX 多路复用可以将多个短连接共享同一 TCP 或 QUIC 隧道，减少重复握手和连接延迟，特别适合游戏、即时通讯或频繁请求的场景，有效提升响应速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 全局与规则代理如何选择？</h5></div>
+    <div class="panel-body">
+        全局代理将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，用户可根据需求灵活选择模式。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何检测并处理订阅中的死节点？</h5></div>
+    <div class="panel-body">
+        定期运行批量测速脚本或使用客户端内置的 url-test、health-check 功能，自动标记或移除响应超时或重连失败的节点。结合订阅更新策略可自动替换或提醒用户维护节点列表。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 使用 AEAD 加密的优势是什么？</h5></div>
+    <div class="panel-body">
+        AEAD 加密提供更强的安全性和抗重放攻击能力，同时隐藏流量特征，降低被 DPI 检测风险。在高封锁环境下使用，可提升连接稳定性和长期可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow 与 Clash 的核心区别是什么？</h5></div>
+    <div class="panel-body">
+        Mellow 采用基于透明代理的架构，适合路由或系统级流量重定向，而 Clash 更偏向规则式应用代理。Mellow 的灵活性更高，但配置复杂；Clash 则兼顾易用性与功能扩展性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的策略组可按 IP 段分流吗？</h5></div>
+    <div class="panel-body">
+        支持。可通过 IP 段匹配将流量分流到指定节点。结合策略组，可实现国内直连、国外代理或游戏加速，实现精细化流量管理和优化网络访问。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何识别节点是否被封锁或限速？</h5></div>
+    <div class="panel-body">
+        通过对比不同节点的 speedtest、ping、下载测速以及 traceroute 路由变化来判断；若多个节点同时异常可能是本地网络问题，单个节点异常则可能被封锁或运营商限速，应尝试更换端口或传输方式。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -297,16 +297,16 @@ Clash支持Windows、macOS、Linux、iOS、Android等多平台。用户需先根
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-9-26-vpn-free.htm" title="VPN Tiktok | 9月26日18.4M/S|免费VPN/SSR节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点免费节点订阅分享">VPN Tiktok | 9月26日18.4M/S|免费VPN/SSR节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-9-13.htm" title="VPN Tiktok | 9月13日18.2M/S|免费VPN/Singbox节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点免费节点订阅分享">VPN Tiktok | 9月13日18.2M/S|免费VPN/Singbox节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-25.htm" title="VPN Tiktok | 9月25日18.6M/S|免费VPN/SSR节点/Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点免费节点订阅分享">VPN Tiktok | 9月25日18.6M/S|免费VPN/SSR节点/Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-10-11.htm" title="VPN Tiktok | 10月11日22.7M/S|免费VPN/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Trojan节点免费节点订阅分享">VPN Tiktok | 10月11日22.7M/S|免费VPN/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Trojan节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-10-7.htm" title="VPN Tiktok | 10月7日22.3M/S|免费VPN/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点免费节点订阅分享">VPN Tiktok | 10月7日22.3M/S|免费VPN/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-6-vpn-free.htm" title="VPN Tiktok | 9月6日19.5M/S|免费VPN/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点免费节点订阅分享">VPN Tiktok | 9月6日19.5M/S|免费VPN/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-22-vpn-proxy.htm" title="VPN Tiktok | 10月22日22.9M/S|免费VPN/Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点免费节点订阅分享">VPN Tiktok | 10月22日22.9M/S|免费VPN/Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点免费节点订阅分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-9-27.htm" title="VPN Tiktok | 9月27日19.5M/S|免费VPN/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点免费节点订阅分享">VPN Tiktok | 9月27日19.5M/S|免费VPN/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-20-node-share.htm" title="VPN Tiktok | 9月20日21.3M/S|免费VPN/Trojan节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点免费节点订阅分享">VPN Tiktok | 9月20日21.3M/S|免费VPN/Trojan节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-9-9.htm" title="VPN Tiktok | 9月9日18.2M/S|免费VPN/SSR节点/Singbox节点/Clash节点/Trojan节点/V2ray节点/Shadowrocket节点免费节点订阅分享">VPN Tiktok | 9月9日18.2M/S|免费VPN/SSR节点/Singbox节点/Clash节点/Trojan节点/V2ray节点/Shadowrocket节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-9-15.htm" title="VPN Tiktok | 9月15日21M/S|免费VPN/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点免费节点订阅分享">VPN Tiktok | 9月15日21M/S|免费VPN/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-28-free-vpn-node.htm" title="VPN Tiktok | 9月28日19.6M/S|免费VPN/Singbox节点/V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/SSR节点免费节点订阅分享">VPN Tiktok | 9月28日19.6M/S|免费VPN/Singbox节点/V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-2-top-vpn-node.htm" title="VPN Tiktok | 9月2日19.2M/S|免费VPN/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点订阅分享">VPN Tiktok | 9月2日19.2M/S|免费VPN/SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点订阅分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-6-vpn-proxy.htm" title="VPN Tiktok | 10月6日18.9M/S|免费VPN/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/Trojan节点/SSR节点免费节点订阅分享">VPN Tiktok | 10月6日18.9M/S|免费VPN/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/Trojan节点/SSR节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-9-29.htm" title="VPN Tiktok | 9月29日20.3M/S|免费VPN/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点免费节点订阅分享">VPN Tiktok | 9月29日20.3M/S|免费VPN/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-9-7.htm" title="VPN Tiktok | 9月7日20.4M/S|免费VPN/Clash节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点免费节点订阅分享">VPN Tiktok | 9月7日20.4M/S|免费VPN/Clash节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-17.htm" title="VPN Tiktok | 9月17日18.3M/S|免费VPN/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点免费节点订阅分享">VPN Tiktok | 9月17日18.3M/S|免费VPN/Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-9-13.htm" title="VPN Tiktok | 9月13日18.2M/S|免费VPN/Singbox节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点免费节点订阅分享">VPN Tiktok | 9月13日18.2M/S|免费VPN/Singbox节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点免费节点订阅分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-19.htm" title="VPN Tiktok | 10月19日19.2M/S|免费VPN/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点免费节点订阅分享">VPN Tiktok | 10月19日19.2M/S|免费VPN/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点免费节点订阅分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -318,7 +318,7 @@ Clash支持Windows、macOS、Linux、iOS、Android等多平台。用户需先根
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
